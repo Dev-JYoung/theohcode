@@ -7,7 +7,7 @@ function MainPage() {
     <div className="mainPage">
       <Header/>
       <MenuBar/>
-      <Warning/>
+      <Warning warning="Website will go down 2022-10-25 18:00 due to maintence. Sorry for Inconvinience."/>
     </div>
   )
 }
