@@ -1,0 +1,70 @@
+body {
+  font-family: 'Pretendard';
+}
+
+.mainPageMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainPageMenu {
+  .mainPageMenuDetail {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    min-height: 40px;
+    background-color: rgba(10,10,10,1);
+  }
+}
+
+.mainPageMenu {
+  .mainPageMenuDetail {
+    .mainPageMenuHome {
+      display: flex;
+      font-size: 10pt;
+      font-weight: 700;
+      
+      padding-left: 200px;
+    }
+
+    .mainPageMenuBanPick {
+      display: flex;
+      font-size: 10pt;
+      font-weight: 700;
+    }
+    
+    .mainPageBeta {
+      display: flex;
+      margin-left: 5px;
+
+      font-weight: 700;
+      font-size: 8pt;
+
+      padding: 0px 3px 0px 3px;
+      border-radius: 5px;
+      color: rgba(255,255,255,1);
+      background-color: orange;
+    }
+
+    .mainPageMenuHome :hover {
+      background-color: blue;
+      transition: 0.5s;
+    }
+  }
+}
+
+.mainPageMenu {
+  .mainPageMenuDetail {
+    .bar {
+      display: flex;
+
+      min-height: 25px;
+      min-width: 2px;
+      
+      margin-right: 50px;
+      margin-left: 50px;
+      background-color: rgba(250,250,250,0.5);
+    }
+  }
+}
