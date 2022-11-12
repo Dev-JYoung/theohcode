@@ -13,7 +13,7 @@ body {
     flex-direction: row;
 
     padding: 5px;
-    min-width: 100vw;
+    min-width: calc(100vw - 10px);
     background-color: rgba(239, 35, 60, 1);
   }
 }
