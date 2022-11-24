@@ -1,0 +1,37 @@
+### 20221124 ###
+Prob: Joon code <- react (not html page), my code <- html page based. So need to convert to react way.
+    => NEED TO SETUP FOR REACT WITH FIREBASE
+1. Generated firebase-config.js file
+    This will contains firebase config
+2. Modify App.tsx with firebase db
+    *** seems like we need to hide api key somehow (.env)
+    commands below:
+        npm install -g yarn
+        yarn add firebase
+        yarn start
+        -> firebase is already added in this case, so need to yarn start from now on    
+    ref: https://www.youtube.com/watch?v=jCY6DH8F4oc
+3. generate build by using yarn
+    comands: yarn build
+    check commands: serve -s build 
+3. Web hosting
+    1) hosting initialization
+        command: firebase init hosting 
+            Are you ready to proceed? Yes
+            Please select an option: Use an existing project
+            Select a default Firebase project for this diretory: the-oh--code (The OH  Code)
+            What do you want to use as your public directory? src  ***( this should be build)
+            Congure as a single-page app(rewrite all urls to /index.html)? No
+            File src/404.html already exists. Overwrite? No
+            File src/index.html already exists. Overwrite? No
+    2) trouble shooting firebase.json 
+        "public": "src", -> "public": "build",
+    3) start hosting  
+        command: firebase deploy --only hosting        
+        Debug tip: firebase emulators:start --only hosting
+        -> This takes some time to hosting!
+    4) use .env file to save apikey
+        install command: npm install dotenv --save
+        create .env file, including apikey, appid, ...
+        change firebase-config.js : part firebaseConfig with proces.env.*
+        generate .gitignore of .env file
