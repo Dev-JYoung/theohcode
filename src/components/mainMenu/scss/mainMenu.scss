@@ -7,6 +7,7 @@ body {
   flex-direction: row;
 
   min-width: 100vw;
+  margin-top: 10px;
 }
 
 .mainPageBoardMenu {
@@ -15,8 +16,16 @@ body {
     flex-direction: column;
 
     align-items: center;
-    background-color: rgba(24,24,24,1);
-    width: 50vw;
+    width: 300px;
+  }
+
+  .mainPageMenuMiddle {
+    display: flex;
+    flex-direction: row;
+    width: 1120px;
+
+    background-color: rgba(250,250,250,1);
+    padding: 50px 100px;
   }
 
   .mainPageMenuRight {
@@ -24,71 +33,248 @@ body {
     flex-direction: column;
 
     background-color: rgba(24,24,24,1);
-    width: 50vw;
+    width: 300px;
   }
 }
 
 .mainPageBoardMenu {
-  .mainPageMenuLeft {
-    .mainPagePickBanStatus {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
       display: flex;
       flex-direction: column;
 
-      background-color: rgba(250,250,250,1);
+      width: 50vw;
     }
-  }
-}
-
-.mainPageBoardMenu {
-  .mainPageMenuLeft {
-    .mainPagePickBanStatus {
-      .mainPagePickBanStatusTitle {
-        display: flex;
-        margin-bottom: 5px;
-
-        color: rgba(10,10,10,1);
-        font-size: 14pt;
-        font-weight: 700;
-      }
-    }
-  }
-}
-
-.mainPageBoardMenu {
-  .mainPageMenuLeft {
-    .mainPagePickBanStatus {
-      .mainPagePickBanStatusLeague {
-        display: flex;
-        flex-direction: row;
-        width: fit-content;
-
-        align-items: center;
-        padding: 5px 10px;
-        color: rgba(250,250,250,1);
-        background-color: rgba(24,24,24,1);
-      }
-    }
-  }
-}
-
-.mainPageBoardMenu {
-  .mainPageMenuLeft {
-    .mainPagePickBanStatus {
-      .mainPagePickBanStatusLeague {
-
-        .mainPagePickBanStatusLeagueTitle {
-          display: flex;
-          font-size: 10pt;
-        }
-        .bar {
-          display: flex;
     
-          min-height: 25px;
-          min-width: 2px;
+    .mainPageMenuMiddleRight {
+      display: flex;
+      flex-direction: column;
 
-          margin-left: 20px;
-          margin-right: 20px;
-          background-color: rgba(250,250,250,0.5);
+      width: 50vw;
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft{
+      .mainPagePickBanStatus {
+        display: flex;
+        flex-direction: column;
+  
+        background-color: rgba(250,250,250,1);
+      } 
+
+      .mainPageLeagueBanPickStatus {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusTitle {
+          color: rgba(10,10,10,1);
+          font-size: 14pt;
+          font-weight: 700;
+        }
+
+        .BanPickBar {
+          display: flex;
+          height: 3px;
+          width: 300px;
+          background-color: rgba(10,10,10,1);
+        }
+
+        .mainPageLeagueBanPickStatusMain {
+          display: flex;
+          flex-direction: row;
+
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusMain {
+          .mainPageLeagueBanPickStatusMainLeft {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .mainPageLeagueBanPickStatusMainRight {
+            display: flex;
+            flex-direction: column;
+
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusMain {
+          .mainPageLeagueBanPickStatusMainLeft {
+            .mainPageLeagueBanPickStatusMainBox {
+              display: flex;
+              flex-direction: column;
+
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusMain {
+          .mainPageLeagueBanPickStatusMainRight {
+            .mainPageLeagueBanPickStatusMainBox {
+              display: flex;
+              flex-direction: column;
+
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusMain {
+          .mainPageLeagueBanPickStatusMainRight {
+            .mainPageLeagueBanPickStatusMainBox {
+              .mainPageLeagueBanPickStatusMainBoxTitle {
+                display: flex;
+                width: 255px;
+
+                background-color: rgba(10,10,10,1);
+                color: rgba(250,250,250,1);
+
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPageLeagueBanPickStatus {
+        .mainPageLeagueBanPickStatusMain {
+          .mainPageLeagueBanPickStatusMainLeft {
+            .mainPageLeagueBanPickStatusMainBox {
+              .mainPageLeagueBanPickStatusMainBoxTitle {
+                display: flex;
+                width: 255px;
+
+                background-color: rgba(10,10,10,1);
+                color: rgba(250,250,250,1);
+
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPagePickBanStatus {
+        .mainPagePickBanStatusTitle {
+          display: flex;
+          margin-bottom: 5px;
+  
+          color: rgba(10,10,10,1);
+          font-size: 14pt;
+          font-weight: 700;
+        }
+      } 
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPagePickBanStatus {
+        .mainPagePickBanStatusLeague {
+          display: flex;
+          flex-direction: row;
+          width: fit-content;
+  
+          align-items: center;
+          padding: 5px 10px;
+          color: rgba(250,250,250,1);
+          background-color: rgba(24,24,24,1);
+        }
+      }
+    }
+  }
+}
+
+.mainPageBoardMenu {
+  .mainPageMenuMiddle {
+    .mainPageMenuMiddleLeft {
+      .mainPagePickBanStatus {
+        .mainPagePickBanStatusLeague {
+  
+          .mainPagePickBanStatusLeagueTitle {
+            display: flex;
+            font-size: 10pt;
+          }
+          .bar {
+            display: flex;
+      
+            min-height: 25px;
+            min-width: 2px;
+  
+            margin-left: 20px;
+            margin-right: 20px;
+            background-color: rgba(250,250,250,0.5);
+          }
         }
       }
     }

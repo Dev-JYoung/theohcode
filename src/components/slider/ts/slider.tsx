@@ -36,8 +36,8 @@ function Slider({slides}:{slides: any}) {
           );
         })}
       </div>
-      <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} />
-      <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} />
+      {/* <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} />
+      <FontAwesomeIcon icon={faChevronRight} onClick={nextSlide} /> */}
     </div>
   );
 }
