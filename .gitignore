@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #ApiKey
-/src/.env
+/src/firebase-config.js
