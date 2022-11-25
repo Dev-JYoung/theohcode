@@ -6,6 +6,7 @@ import './App.css';
 import './firebase-config';
 import {db} from './firebase-config';
 import {collection, getDocs} from 'firebase/firestore';
+import Banpick from './pages/banpick/ts/bankpick';
 
 function App() {
   const [users,setUsers] = useState([]);
@@ -20,7 +21,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<MainPage />}/>
+        <Route path="/banpick" element={<Banpick />}/>
       </Routes>
     </BrowserRouter>
   );
