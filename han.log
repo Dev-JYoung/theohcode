@@ -35,3 +35,37 @@ Prob: Joon code <- react (not html page), my code <- html page based. So need to
         create .env file, including apikey, appid, ...
         change firebase-config.js : part firebaseConfig with proces.env.*
         generate .gitignore of .env file
+        -> have trouble --> removed, and gitignore for firebase-config.js
+
+### 20221125 ###
+Yesterday,
+    Joon created
+        src>pages>banpick>scss>banpick.scss,
+        src>pages>banpick>ts>banpick.tsx,
+    Modified
+        src>App.tsx Route (for linking pages)
+What I want to do: 
+    1. Banpick page header(copy from mainpage), 
+    2. Google login, 
+    3. Ornn portion
+1. Banpick page header:
+    imported from Joon's header/menubar
+2. Want to try google login:
+    1) edited firebase-config.js
+        import signin/... modules
+        export functions
+    2) import auth at src>components>header>ts>header.tsx
+        import auth, signInWithGoogle
+        Added buttons and the signInfunction
+    3) check
+        command:
+            yarn build
+            serve -s build
+3. Import Ornn
+    1) Copied Orrn picture to public>assets>ornn.jpg
+    2) Generated
+        components>wallpaper>scss>wallpaper.scss,
+        components>wallpaper>ts>wallpaper.ts
+        contents are copied from previous theohcode github
+    3) Call generated wallpaper in src>pages>banpick>ts>bankpick.tsx
+        module import and insert <Wallpaper/>

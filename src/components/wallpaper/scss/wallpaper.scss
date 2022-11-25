@@ -1,0 +1,27 @@
+body {
+    font-family: "Pretendard";
+}
+
+.wallpaper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wallpaper {
+    .wallpaperimage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;      
+    }
+}
+.wallpaper {
+    .wallpaperimage {
+        .mainimage{
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;	
+            width: 1320px;
+            height: 500px;             
+        }       
+    }
+}
