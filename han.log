@@ -81,4 +81,7 @@ Today, Want to to
         1) remove all previous champions photo files
         2) get the latest version from ddragon
         3) get all champions photo files in public>assets>champrec or public>assets>champsquare
-2. Make pick/ban formation        
+2. Make pick/ban formation 
+    1) Generated banpickc components and copied tsx and scss from previous theohcode
+        *** Joon's tip: better to put alt for image
+    2) Call pickbanc components in banpick page
