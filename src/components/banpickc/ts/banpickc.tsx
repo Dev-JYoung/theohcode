@@ -23,20 +23,20 @@ function Banpickc() {
     <div className="banpickbox">
     <div className="banbox">
       <div className="banblue">
-        <div className="ban" id="blueban1"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="blueban2"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="blueban3"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="blueban4"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="blueban5"><img src='assets/cancel.png'></img></div>
+        <div className="ban" id="blueban1"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="blueban2"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="blueban3"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="blueban4"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="blueban5"><img src='assets/cancel.png' alt="logo"></img></div>
         <span className="blue">BLUE</span>
       </div>
       <div className="banred">
         <span className="red">RED</span>
-        <div className="ban" id="redban1"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="redban2"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="redban3"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="redban4"><img src='assets/cancel.png'></img></div>
-        <div className="ban" id="redban5"><img src='assets/cancel.png'></img></div>
+        <div className="ban" id="redban1"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="redban2"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="redban3"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="redban4"><img src='assets/cancel.png' alt="logo"></img></div>
+        <div className="ban" id="redban5"><img src='assets/cancel.png' alt="logo"></img></div>
       </div>
     </div>
     <div className="pickbox">
