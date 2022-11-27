@@ -111,4 +111,9 @@ Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. in
       <div className="play" id="play">
         <FontAwesomeIcon className="i" icon={faPlay}/>
       </div>    
-4. enabling .env file      
+4. enabling .env file   
+    1) generate .env file
+        REACT_APP_apiKey= apikey
+    2) change firebase-config.js file with .env variable names
+        apiKey: process.env.REACT_APP_apiKey,
+    3) change .gitignore (ignore .env, not firebase-config.js file)
