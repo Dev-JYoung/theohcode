@@ -85,3 +85,16 @@ Today, Want to to
     1) Generated banpickc components and copied tsx and scss from previous theohcode
         *** Joon's tip: better to put alt for image
     2) Call pickbanc components in banpick page
+
+### 20221127 ###
+Today I want to do 1. bankground color to black, 2. insert play/back imoji, 3. pick champ div divide, 4. enabling .env file
+1. background color to black
+    Added bankpickc.scss
+        .banpickMain {
+            background-color: #090909;
+            width: 1320px;
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;	
+        }
