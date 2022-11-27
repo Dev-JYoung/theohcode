@@ -69,3 +69,16 @@ What I want to do:
         contents are copied from previous theohcode github
     3) Call generated wallpaper in src>pages>banpick>ts>bankpick.tsx
         module import and insert <Wallpaper/>
+
+### 20221126 ###
+Today, Want to to
+    1. download pictures for pick/ban
+    2. make pick/ban formation
+1. Download picturef for pick/ban
+    Used python script : public>scripts>extractpng.py
+    Usage: python extractpng.py
+    What to do:
+        1) remove all previous champions photo files
+        2) get the latest version from ddragon
+        3) get all champions photo files in public>assets>champrec or public>assets>champsquare
+2. Make pick/ban formation        
