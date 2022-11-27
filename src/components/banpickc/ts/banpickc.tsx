@@ -1,7 +1,7 @@
 import React from "react";
 import '../scss/banpickc.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShareNodes, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 function Banpickc() {
 
@@ -40,18 +40,24 @@ function Banpickc() {
       </div>
     </div>
     <div className="pickbox">
-      <div className="pick" id="bluepick1"></div>
-      <div className="pick" id="bluepick2"></div>
-      <div className="pick" id="bluepick3"></div>
-      <div className="pick" id="bluepick4"></div>
-      <div className="pick" id="bluepick5"></div>
-      <div className="play" id="play"><i className="fa-solid fa-play"></i></div>
-      <div className="back"><i className="fa-solid fa-square-caret-left"></i></div>            
-      <div className="pick" id="redpick1"></div>
-      <div className="pick" id="redpick2"></div>
-      <div className="pick" id="redpick3"></div>
-      <div className="pick" id="redpick4"></div>
-      <div className="pick" id="redpick5"></div>
+      <div className='bluepick'>
+        <div className="pick" id="bluepick1"></div>
+        <div className="pick" id="bluepick2"></div>
+        <div className="pick" id="bluepick3"></div>
+        <div className="pick" id="bluepick4"></div>
+        <div className="pick" id="bluepick5"></div>
+      </div>
+      <div className="play" id="play">
+        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faPlay}/>
+      </div>
+      <div className="back" id="back"><i className="fa-solid fa-square-caret-left"></i></div>   
+      <div className='redpick'>       
+        <div className="pick" id="redpick1"></div>
+        <div className="pick" id="redpick2"></div>
+        <div className="pick" id="redpick3"></div>
+        <div className="pick" id="redpick4"></div>
+        <div className="pick" id="redpick5"></div>
+      </div>  
     </div>
   </div>    
 </div>

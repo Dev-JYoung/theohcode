@@ -87,7 +87,7 @@ Today, Want to to
     2) Call pickbanc components in banpick page
 
 ### 20221127 ###
-Today I want to do 1. bankground color to black, 2. insert play/back imoji, 3. pick champ div divide, 4. enabling .env file
+Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. insert play/back imoji, 4. enabling .env file
 1. background color to black
     Added bankpickc.scss
         .banpickMain {
@@ -98,3 +98,6 @@ Today I want to do 1. bankground color to black, 2. insert play/back imoji, 3. p
             margin-left: auto;
             margin-right: auto;	
         }
+2. pick champ div divide
+    modify banpickc.tsx file : Added additional redpick/bluepick div
+    
