@@ -30,21 +30,21 @@ function MainMenu() {
             <div className='mainPageLeagueBanPickStatusMain'>
               <div className='mainPageLeagueBanPickStatusMainLeft'>
                 <div className='mainPageLeagueBanPickStatusMainBox'>
-                  <img src='assets/deftdwg.jpeg'></img>
+                  <img src='assets/deftdwg.jpeg' alt='deft'></img>
                   <span className='mainPageLeagueBanPickStatusMainBoxTitle'>굿바이 데프트</span>
                 </div>
                 <div className='mainPageLeagueBanPickStatusMainBox'>
-                  <img src='assets/deftdwg.jpeg'></img>
+                  <img src='assets/deftdwg.jpeg' alt='deft'></img>
                   <span className='mainPageLeagueBanPickStatusMainBoxTitle'>굿바이 데프트</span>
                 </div>
               </div>
               <div className='mainPageLeagueBanPickStatusMainRight'>
                 <div className='mainPageLeagueBanPickStatusMainBox'>
-                  <img src='assets/deftdwg.jpeg'></img>
+                  <img src='assets/deftdwg.jpeg' alt='deft'></img>
                   <span className='mainPageLeagueBanPickStatusMainBoxTitle'>굿바이 데프트</span>
                 </div>
                 <div className='mainPageLeagueBanPickStatusMainBox'>
-                  <img src='assets/deftdwg.jpeg'></img>
+                  <img src='assets/deftdwg.jpeg' alt='deft'></img>
                   <span className='mainPageLeagueBanPickStatusMainBoxTitle'>굿바이 데프트</span>
                 </div>
               </div>
