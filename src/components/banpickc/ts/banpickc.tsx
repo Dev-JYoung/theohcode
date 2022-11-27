@@ -1,7 +1,7 @@
 import React from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareNodes, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Banpickc() {
 
@@ -48,9 +48,11 @@ function Banpickc() {
         <div className="pick" id="bluepick5"></div>
       </div>
       <div className="play" id="play">
-        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faPlay}/>
+        <FontAwesomeIcon className="i" icon={faPlay}/>
       </div>
-      <div className="back" id="back"><i className="fa-solid fa-square-caret-left"></i></div>   
+      <div className="back" id="back">
+        <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
+      </div>   
       <div className='redpick'>       
         <div className="pick" id="redpick1"></div>
         <div className="pick" id="redpick2"></div>

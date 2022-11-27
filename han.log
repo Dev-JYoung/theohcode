@@ -87,7 +87,7 @@ Today, Want to to
     2) Call pickbanc components in banpick page
 
 ### 20221127 ###
-Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. insert play/back imoji, 4. enabling .env file
+Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. insert play/back emoji, 4. enabling .env file
 1. background color to black
     Added bankpickc.scss
         .banpickMain {
@@ -100,4 +100,15 @@ Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. in
         }
 2. pick champ div divide
     modify banpickc.tsx file : Added additional redpick/bluepick div
-    
+3. insert play/back emogi.
+    1) download fontawesome
+        npm i --save @fortawesome/fontawesome-svg-core
+        npm i --save @fortawesome/free-solid-svg-icons
+        npm i --save @fortawesome/react-fontawesome
+    2) import image that I want to insert
+        import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+    3) call the imported icon
+      <div className="play" id="play">
+        <FontAwesomeIcon className="i" icon={faPlay}/>
+      </div>    
+4. enabling .env file      

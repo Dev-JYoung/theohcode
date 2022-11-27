@@ -164,9 +164,30 @@
 .banpickbox .pickbox {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: center;		
 }
 
-.banpickbox .pickbox .pick{
+.banpickbox .pickbox .bluepick {
+	display: flex;
+	flex-direction: row;
+}
+
+.banpickbox .pickbox .redpick {
+	display: flex;
+	flex-direction: row;
+}
+
+.banpickbox .pickbox .bluepick .pick{
+	margin-top: 15px;
+	margin-left: 5px;
+	margin-right: 5px;	
+	background-color: #181818;
+	width: 80px;
+	height: 160px;
+}
+
+.banpickbox .pickbox .redpick .pick{
 	margin-top: 15px;
 	margin-left: 5px;
 	margin-right: 5px;	
@@ -180,10 +201,10 @@
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #181818;
-	width: 80px;
-	height: 80px;
+	width: 20px;
+	height: 20px;
 }
-.banpickbox .pickbox .play > i{
+.banpickbox .pickbox .play .i{
 	color: rgba(250,250,250,1);
 }
 
@@ -192,9 +213,9 @@
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #181818;
-	width: 80px;
-	height: 80px;
+	width: 20px;
+	height: 20px;
 }
-.banpickbox .pickbox .back > i{
+.banpickbox .pickbox .back .i{
 	color: rgba(250,250,250,1);
 }
