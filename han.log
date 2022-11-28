@@ -117,3 +117,12 @@ Today I want to do 1. bankground color to black, 2. pick champ div divide, 3. in
     2) change firebase-config.js file with .env variable names
         apiKey: process.env.REACT_APP_apiKey,
     3) change .gitignore (ignore .env, not firebase-config.js file)
+5. Hosted:
+    check before hosting:
+        yarn build
+        serve -s build
+    hosting command: firebase deploy --only hosting 
+P.S. Xar feedback:
+    1) share button size
+    2) align pick/ban square size
+    3) ornn picture cut (object-fit: cover;)

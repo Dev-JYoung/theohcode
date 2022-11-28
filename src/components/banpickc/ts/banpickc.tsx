@@ -19,6 +19,7 @@ function Banpickc() {
       <span className="share">
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </span>
+      <div className="bar"></div>
     </div>
     <div className="banpickbox">
     <div className="banbox">
@@ -47,12 +48,14 @@ function Banpickc() {
         <div className="pick" id="bluepick4"></div>
         <div className="pick" id="bluepick5"></div>
       </div>
-      <div className="play" id="play">
-        <FontAwesomeIcon className="i" icon={faPlay}/>
+      <div className='playback'>
+        <div className="play" id="play">
+          <FontAwesomeIcon className="i" icon={faPlay}/>
+        </div>
+        <div className="back" id="back">
+          <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
+        </div>   
       </div>
-      <div className="back" id="back">
-        <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
-      </div>   
       <div className='redpick'>       
         <div className="pick" id="redpick1"></div>
         <div className="pick" id="redpick2"></div>

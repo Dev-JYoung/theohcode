@@ -73,7 +73,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;	
-	float: left;
+	// float: left;
 	width: 200px;
 	/* height: 60px; */
 	text-align: center;
@@ -86,7 +86,7 @@
 	flex-direction: column;
 	border: 2px solid #212121;
 	width: 1120px;
-	height: 330px;
+	height: 260px;
 	margin-left: auto;
 	margin-right: auto;		
 	text-align: center;
@@ -96,19 +96,17 @@
 .banpickbox .banbox {
 	display: flex;
 	flex-direction: row;
-	margin-left: 13px;
-	margin-right: 13px; /*HAN 20221119 TODO:: when the ban red/blue team separate, I'll need this*/
 }
 .banpickbox .banbox .banblue{
 	display: flex;
 	flex-direction: row;
-	margin-left: 13px;
+	margin-left: 20px;
 }
 .banpickbox .banbox .banred{
 	display: flex;
 	flex-direction: row;
 	margin-left: auto;
-	margin-right: 13px;
+	margin-right: 20px;
 }
 .banpickbox .banbox .banred .ban{
 	margin-top: 20px;
@@ -133,7 +131,7 @@
 	height: 50px;
 }
 .banpickbox .banbox .banblue .blue{
-	margin-top: 15px;
+	margin-top: 20px;
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #053482;
@@ -147,7 +145,7 @@
 	font-weight: bold;
 }
 .banpickbox .banbox .banred .red{
-	margin-top: 15px;
+	margin-top: 20px;
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #aa2b43;
@@ -170,12 +168,12 @@
 
 .banpickbox .pickbox .bluepick {
 	display: flex;
-	flex-direction: row;
+	// flex-direction: row;
 }
 
 .banpickbox .pickbox .redpick {
 	display: flex;
-	flex-direction: row;
+	// flex-direction: row-reverse;
 }
 
 .banpickbox .pickbox .bluepick .pick{
@@ -183,8 +181,8 @@
 	margin-left: 5px;
 	margin-right: 5px;	
 	background-color: #181818;
-	width: 80px;
-	height: 160px;
+	width: 73px;
+	height: 146px;
 }
 
 .banpickbox .pickbox .redpick .pick{
@@ -192,11 +190,17 @@
 	margin-left: 5px;
 	margin-right: 5px;	
 	background-color: #181818;
-	width: 80px;
-	height: 160px;
+	width: 73px;
+	height: 146px;
 }
 
-.banpickbox .pickbox .play{
+.banpickbox .pickbox .playback{
+	display: flex;
+	flex-direction: row;
+	width: 240px;
+	justify-content: center;		
+}
+.banpickbox .pickbox .playback .play{
 	margin-top: 15px;
 	margin-left: 15px;
 	margin-right: 15px;	
@@ -204,11 +208,11 @@
 	width: 20px;
 	height: 20px;
 }
-.banpickbox .pickbox .play .i{
+.banpickbox .pickbox .playback .play .i{
 	color: rgba(250,250,250,1);
 }
 
-.banpickbox .pickbox .back{
+.banpickbox .pickbox .playback .back{
 	margin-top: 15px;
 	margin-left: 15px;
 	margin-right: 15px;	
@@ -216,6 +220,6 @@
 	width: 20px;
 	height: 20px;
 }
-.banpickbox .pickbox .back .i{
+.banpickbox .pickbox .playback .back .i{
 	color: rgba(250,250,250,1);
 }
