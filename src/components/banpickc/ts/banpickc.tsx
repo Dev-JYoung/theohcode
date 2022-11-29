@@ -3,10 +3,65 @@ import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
-function Banpickc() {
 
+function Banpickc() {
+  function useEffect(){
+    const script = document.createElement('script')
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  } 
+  useEffect();
+  function loginWithKakao() {
+    window.Kakao.Auth.authorize({
+      redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
+    });
+  }
+  function sharing() {
+    const url = window.location.href; //현재 url가져오기
+
+    window.Kakao.init('process.env.REACT_APP_kakaoJavascriptKey');
+    console.log(window.Kakao.isInitialized());
+    loginWithKakao();
+    window.Kakao.Link.sendDefault({ 
+      objectType: 'feed',
+      content: {
+        title: 'Ornn',
+        description: '#fav',
+        imageUrl: "assets/ornn.jpg",
+        link: {
+          mobileWebUrl: url,
+          webUrl: url,
+        },
+      },
+      social: {
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845,
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: url,
+            webUrl: url,
+          },
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: url,
+            webUrl: url,
+          },
+        },
+      ],
+    });
+  }
   return(
-  <div className='banpickMain'>
+  <div className='banpickMain'>   
     <div className="banpickselect">
       <div className="banpickmenumain">
         <span className="banpickmenu">Ban/Pick Menu</span>
@@ -16,9 +71,9 @@ function Banpickc() {
         <span className="prefselect">Preference Select</span>
       </div>          
       <div className="bar"></div>
-      <span className="share">
+      <div className="share" onClick={sharing}>
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
-      </span>
+      </div>
       <div className="bar"></div>
     </div>
     <div className="banpickbox">

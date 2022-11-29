@@ -79,7 +79,10 @@
 	/* height: 60px; */
 	text-align: center;
 }
-
+.banpickselect .share:hover{
+	background-color: rgba(10,10,10,1);
+	transition: all 0.3s;
+}
 
 
 .banpickbox{

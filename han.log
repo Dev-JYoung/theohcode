@@ -134,3 +134,14 @@ Today I want to do 1. deal with xar's feedback 2. start with sharing button
     2) Pick box should have some margin in the top
     3) play/back should align bottom, and background should be bigger, so that seems like a button
     4) ban menubar and pickban window align issue
+2. start with sharing button (ref: https://pottatt0.tistory.com/entry/React-typescript-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%EC%9C%BC%EB%A1%9C-%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0)
+    1) added onclick  in sharing div, and connected to function named sharing
+    2) in banpickc.tsx, added useEffect, loginWithKakao, sharing
+        for access kakao, and get credential, and share any pic
+    3) not working :( -> TODO:: tomorrow further debug needed
+        Admin Settings Issue (KOE101)
+3. Hosted:
+    check before hosting:
+        yarn build
+        serve -s build
+    hosting command: firebase deploy --only hosting 
