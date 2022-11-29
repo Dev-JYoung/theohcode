@@ -126,3 +126,11 @@ P.S. Xar feedback:
     1) share button size
     2) align pick/ban square size
     3) ornn picture cut (object-fit: cover;)
+
+### 20221128 ###
+Today I want to do 1. deal with xar's feedback 2. start with sharing button
+1. xar's feedback
+    1) In the ban/pick box, align issue
+    2) Pick box should have some margin in the top
+    3) play/back should align bottom, and background should be bigger, so that seems like a button
+    4) ban menubar and pickban window align issue

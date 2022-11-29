@@ -16,6 +16,7 @@
 	background-color: #1c1c1c;
 	color: white;
 	display: flex;	
+	border: 2px solid #1c1c1c;
 }
 .banpickselect .banpickmenumain{
 	display: flex;
@@ -132,7 +133,7 @@
 }
 .banpickbox .banbox .banblue .blue{
 	margin-top: 20px;
-	margin-left: 15px;
+	margin-left: 13px;
 	margin-right: 15px;	
 	background-color: #053482;
 	display: flex;
@@ -147,7 +148,7 @@
 .banpickbox .banbox .banred .red{
 	margin-top: 20px;
 	margin-left: 15px;
-	margin-right: 15px;	
+	margin-right: 13px;	
 	background-color: #aa2b43;
 	display: flex;
 	align-items: center;
@@ -160,6 +161,7 @@
 }
 
 .banpickbox .pickbox {
+	margin-top: 3px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -195,18 +197,22 @@
 }
 
 .banpickbox .pickbox .playback{
-	display: flex;
+	display: inline-flex;
 	flex-direction: row;
-	width: 240px;
-	justify-content: center;		
+	width: 244px;
+	justify-content: center;
+	margin-top: auto;		
 }
 .banpickbox .pickbox .playback .play{
 	margin-top: 15px;
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #181818;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
 }
 .banpickbox .pickbox .playback .play .i{
 	color: rgba(250,250,250,1);
@@ -217,8 +223,11 @@
 	margin-left: 15px;
 	margin-right: 15px;	
 	background-color: #181818;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
 }
 .banpickbox .pickbox .playback .back .i{
 	color: rgba(250,250,250,1);
