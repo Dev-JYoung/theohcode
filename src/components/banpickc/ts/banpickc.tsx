@@ -3,7 +3,16 @@ import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
+function shareKakaoLink () {
+  // @ts-ignore
+  window.Kakao.Link.sendCustom({
+    templateId: 86600 , // 내가 만든 템플릿 아이디를 넣어주면 된다
+  });
+};
 
+function onShareKakaoClick() {
+  shareKakaoLink();
+};
 function Banpickc() {
   function useEffect(){
     const script = document.createElement('script')
@@ -15,50 +24,17 @@ function Banpickc() {
     }
   } 
   useEffect();
-  function loginWithKakao() {
-    window.Kakao.Auth.authorize({
-      redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-    });
-  }
+  // function loginWithKakao() {
+  //   window.Kakao.Auth.authorize({
+  //     redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
+  //   });
+  //   // console.log(window.Kakao.Auth.setAccessToken('${ACCESS_TOKEN}'));
+  // }
   function sharing() {
     const url = window.location.href; //현재 url가져오기
-
-    window.Kakao.init('process.env.REACT_APP_kakaoJavascriptKey');
-    console.log(window.Kakao.isInitialized());
-    loginWithKakao();
-    window.Kakao.Link.sendDefault({ 
-      objectType: 'feed',
-      content: {
-        title: 'Ornn',
-        description: '#fav',
-        imageUrl: "assets/ornn.jpg",
-        link: {
-          mobileWebUrl: url,
-          webUrl: url,
-        },
-      },
-      social: {
-        likeCount: 286,
-        commentCount: 45,
-        sharedCount: 845,
-      },
-      buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-            mobileWebUrl: url,
-            webUrl: url,
-          },
-        },
-        {
-          title: '앱으로 보기',
-          link: {
-            mobileWebUrl: url,
-            webUrl: url,
-          },
-        },
-      ],
-    });
+    window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
+    // loginWithKakao();
+    onShareKakaoClick();    
   }
   return(
   <div className='banpickMain'>   
