@@ -145,3 +145,9 @@ Today I want to do 1. deal with xar's feedback 2. start with sharing button
         yarn build
         serve -s build
     hosting command: firebase deploy --only hosting 
+
+### 20221129 ###
+Today I want to 1. Debugging kakaotalk sharing 2. start to think what to share
+1. generated kakao profile, and connect kakao api
+2. kakao profile needs to meet what kind of info should be inserted.
+    Thinking to screen capture (Joon)
