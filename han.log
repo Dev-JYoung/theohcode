@@ -151,3 +151,18 @@ Today I want to 1. Debugging kakaotalk sharing 2. start to think what to share
 1. generated kakao profile, and connect kakao api
 2. kakao profile needs to meet what kind of info should be inserted.
     Thinking to screen capture (Joon)
+3. Hosted:
+    check before hosting:
+        yarn build
+        serve -s build
+    hosting command: firebase deploy --only hosting     
+
+### 20221130 ###
+Today I want to 1. screenshot tsx 2. share the png/jpg file to kakao/other app
+1. screenshot
+    1) setup for dom-to-image
+        npm install dom-to-image
+        npm i --save-dev @types/dom-to-image
+    2) generate the function named capturar,
+        get the banpickbox document, and capture the div, and copy & paste
+2. share the png/jpg file

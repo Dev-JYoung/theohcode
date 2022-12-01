@@ -2,6 +2,7 @@ import React from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+import domtoimage from "dom-to-image";
 
 function shareKakaoLink () {
   // @ts-ignore
@@ -9,8 +10,18 @@ function shareKakaoLink () {
     templateId: 86600 , // 내가 만든 템플릿 아이디를 넣어주면 된다
   });
 };
-
+function capturar(){
+  var node = document.getElementById("banpickbox") as HTMLImageElement;
+  domtoimage.toPng(node)
+    .then(function (dataUrl) {
+      var img = new Image();
+      img.src = dataUrl;
+      console.log(dataUrl);
+      node.appendChild(img);
+    });
+}
 function onShareKakaoClick() {
+  capturar();
   shareKakaoLink();
 };
 function Banpickc() {
@@ -24,16 +35,9 @@ function Banpickc() {
     }
   } 
   useEffect();
-  // function loginWithKakao() {
-  //   window.Kakao.Auth.authorize({
-  //     redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-  //   });
-  //   // console.log(window.Kakao.Auth.setAccessToken('${ACCESS_TOKEN}'));
-  // }
   function sharing() {
-    const url = window.location.href; //현재 url가져오기
+    const url = window.location.href;
     window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
-    // loginWithKakao();
     onShareKakaoClick();    
   }
   return(
@@ -52,7 +56,7 @@ function Banpickc() {
       </div>
       <div className="bar"></div>
     </div>
-    <div className="banpickbox">
+    <div className="banpickbox" id='banpickbox'>
     <div className="banbox">
       <div className="banblue">
         <div className="ban" id="blueban1"><img src='assets/cancel.png' alt="logo"></img></div>
