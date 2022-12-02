@@ -18,11 +18,16 @@ function capturar(){
       img.src = dataUrl;
       console.log(dataUrl);
       node.appendChild(img);
+
+      window.Kakao.Share.scrapImage({
+        imageUrl: dataUrl,
+      });
     });
+
 }
 function onShareKakaoClick() {
   capturar();
-  shareKakaoLink();
+  // shareKakaoLink();
 };
 function Banpickc() {
   function useEffect(){
