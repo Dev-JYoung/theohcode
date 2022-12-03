@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import domtoimage from "dom-to-image";
 
+
 function shareKakaoLink () {
   // @ts-ignore
   window.Kakao.Link.sendCustom({
@@ -39,6 +40,7 @@ function Banpickc() {
       document.body.removeChild(script)
     }
   } 
+  
   useEffect();
   function sharing() {
     const url = window.location.href;
@@ -61,6 +63,7 @@ function Banpickc() {
       </div>
       <div className="bar"></div>
     </div>
+  
     <div className="banpickbox" id='banpickbox'>
     <div className="banbox">
       <div className="banblue">
