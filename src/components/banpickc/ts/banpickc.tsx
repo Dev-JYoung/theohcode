@@ -4,7 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import domtoimage from "dom-to-image";
 
-
+function closetheform() {
+  const el = document.getElementById("sharepopup");
+  if (el != null ) {
+      if (el.style.display === 'none') {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+  }
+}
 function shareKakaoLink () {
   // @ts-ignore
   window.Kakao.Link.sendCustom({
@@ -62,8 +71,14 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
+      <div className="share" onClick={closetheform}>
+        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
+      </div>
+      <div className="bar"></div>
     </div>
-  
+    <div className="sharepopup" id='sharepopup'>
+      안녕하세요
+    </div>
     <div className="banpickbox" id='banpickbox'>
     <div className="banbox">
       <div className="banblue">
