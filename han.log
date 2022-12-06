@@ -189,3 +189,5 @@ Today I want to 1. popup default 2. insert share popup
     display: none; <- for not showing the div, none for the div in css
     TODO: 20221205 HAN need to click twice
 2. insert share popup
+    command: npm i --save @fortawesome/free-brands-svg-icons
+    added facebook/instagram/discord in share popup

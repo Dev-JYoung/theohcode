@@ -92,6 +92,7 @@
 
 .sharepopup .sharepopupcont{
 	display: flex;
+	flex-direction: column;
 	width: 1120px;
 	height: 260px;
 	background-color: white;

@@ -2,6 +2,7 @@ import React from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import domtoimage from "dom-to-image";
 
 function closetheform() {
@@ -78,7 +79,9 @@ function Banpickc() {
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>
-        djdj
+        <FontAwesomeIcon className="fa-brands fa-facebook" icon={faFacebook}/>
+        <FontAwesomeIcon className="fa-brands fa-instagram" icon={faInstagram}/>
+        <FontAwesomeIcon className="fa-brands fa-discord" icon={faDiscord}/>
       </div>
     </div>
     <div className="banpickbox" id='banpickbox'>
