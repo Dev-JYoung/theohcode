@@ -8,7 +8,7 @@ function closetheform() {
   const el = document.getElementById("sharepopup");
   if (el != null ) {
       if (el.style.display === 'none') {
-        el.style.display = 'block';
+        el.style.display = 'flex';
       } else {
         el.style.display = 'none';
       }
@@ -77,7 +77,9 @@ function Banpickc() {
       <div className="bar"></div>
     </div>
     <div className="sharepopup" id='sharepopup'>
-      안녕하세요
+      <div className='sharepopupcont'>
+        djdj
+      </div>
     </div>
     <div className="banpickbox" id='banpickbox'>
     <div className="banbox">

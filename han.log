@@ -182,3 +182,10 @@ Today I want to 1. popup 2. post page 3.
 Today I want to popup
 1. popup
     generate closetheform function, and get the banpickbox popup.
+
+### 20221205 ###
+Today I want to 1. popup default 2. insert share popup
+1. popup default
+    display: none; <- for not showing the div, none for the div in css
+    TODO: 20221205 HAN need to click twice
+2. insert share popup

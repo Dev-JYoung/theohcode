@@ -85,7 +85,16 @@
 }
 
 .sharepopup {
-	display: block;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.sharepopup .sharepopupcont{
+	display: flex;
+	width: 1120px;
+	height: 260px;
+	background-color: white;
 }
 
 .banpickbox{
