@@ -92,10 +92,17 @@
 
 .sharepopup .sharepopupcont{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	width: 1120px;
 	height: 260px;
 	background-color: white;
+}
+.sharepopup .sharepopupcont .socialbrand{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
 }
 
 .banpickbox{

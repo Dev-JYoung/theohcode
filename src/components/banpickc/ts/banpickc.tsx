@@ -79,9 +79,15 @@ function Banpickc() {
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>
-        <FontAwesomeIcon className="fa-brands fa-facebook" icon={faFacebook}/>
-        <FontAwesomeIcon className="fa-brands fa-instagram" icon={faInstagram}/>
-        <FontAwesomeIcon className="fa-brands fa-discord" icon={faDiscord}/>
+        <div className="socialbrand">
+          <FontAwesomeIcon className="fa-brands fa-facebook" size="3x" icon={faFacebook}/>
+        </div>
+        <div className="socialbrand">
+          <FontAwesomeIcon className="fa-brands fa-instagram" size="3x" icon={faInstagram}/>
+        </div>
+        <div className="socialbrand">
+          <FontAwesomeIcon className="fa-brands fa-discord" size="3x" icon={faDiscord}/>
+        </div>
       </div>
     </div>
     <div className="banpickbox" id='banpickbox'>
