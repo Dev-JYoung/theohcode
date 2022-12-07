@@ -193,9 +193,13 @@ Today I want to 1. popup default 2. insert share popup
     added facebook/instagram/discord in share popup
 
 ### 20221206 ###
+<ref for share: https://blog.toycrane.xyz/social-%EA%B3%B5%EC%9C%A0-%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-11563e54af82>
 Today I want to 1. row direction for share display 2. share with instagram 3. image upload to instagram
 1. row direction for share display
     flex-direction: row;
     make the logo 3x
 2. share with instagram (ref: https://studio-jt.co.kr/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-api-instagram-graph-api-instagram-api-v2-%EC%97%B0%EB%8F%99%EC%9D%BC%EC%A7%80/)
+    better ref: https://velog.io/@shi9476/Instagram-API-%EC%97%B0%EB%8F%99
+    Needed to use wsl ubuntu for token
+3. copy to clipboard
 

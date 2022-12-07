@@ -5,6 +5,7 @@ import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-
 import { faFacebook, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import domtoimage from "dom-to-image";
 
+
 function closetheform() {
   const el = document.getElementById("sharepopup");
   if (el != null ) {
@@ -21,7 +22,7 @@ function shareKakaoLink () {
     templateId: 86600 , // 내가 만든 템플릿 아이디를 넣어주면 된다
   });
 };
-function capturar(){
+async function capturar(){
   var node = document.getElementById("banpickbox") as HTMLImageElement;
   domtoimage.toPng(node)
     .then(function (dataUrl) {
@@ -30,10 +31,10 @@ function capturar(){
       console.log(dataUrl);
       node.appendChild(img);
 
-      window.Kakao.Share.scrapImage({
-        imageUrl: dataUrl,
-      });
-    });
+      // window.Kakao.Share.scrapImage({
+      //   imageUrl: dataUrl,
+      // });
+    });  
 
 }
 function onShareKakaoClick() {
