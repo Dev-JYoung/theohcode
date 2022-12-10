@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import domtoimage from "dom-to-image";
+import CopyToClipboard from 'react-copy-to-clipboard';
 
-
+async function copyimg(){
+  /* HAN 20221208 TODO: You need to enable JavaScript to run this app.  */
+  if (navigator.clipboard) {
+    console.log('Clipboard API available');
+  }
+  else {
+    console.log('nono')
+  }
+  const response = await fetch('assets/orrn.jpg');
+  const blob = await response.blob();
+  await navigator.clipboard.write([
+    new ClipboardItem({
+      [blob.type]: blob
+    })
+  ]);
+  console.log('Image copied.');  
+}
 function closetheform() {
   const el = document.getElementById("sharepopup");
   if (el != null ) {
@@ -31,6 +48,7 @@ async function capturar(){
       console.log(dataUrl);
       node.appendChild(img);
 
+      // navigator.clipboard.write(dataUrl);
       // window.Kakao.Share.scrapImage({
       //   imageUrl: dataUrl,
       // });
@@ -51,7 +69,7 @@ function Banpickc() {
       document.body.removeChild(script)
     }
   } 
-  
+  // const text = "ABCD";  
   useEffect();
   function sharing() {
     const url = window.location.href;
@@ -77,6 +95,13 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
+      <div className="share">
+        <div id="copyToImage" onClick={copyimg}>Hello World!</div>
+       {/* <button onClick={() => {
+         navigator.clipboard.writeText(text);}}>
+        Copy
+       </button> */}
+      </div>
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>

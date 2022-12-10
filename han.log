@@ -203,3 +203,25 @@ Today I want to 1. row direction for share display 2. share with instagram 3. im
     Needed to use wsl ubuntu for token
 3. copy to clipboard
 
+### 20221207 ###
+Today I want to copy to clipboard
+1. copy to clipboard
+    npm install --save @types/react-copy-to-clipboard
+    <button onClick={() => {
+         navigator.clipboard.writeText(text);}}>
+        Copy
+    </button>
+
+### 20221208 ###
+Today I want to 1. copy image to clipboard 2. upload to instagram
+1. copy image to clipboard
+    import CopyToClipboard from 'react-copy-to-clipboard';
+        const response = await fetch('assets/orrn.jpg');
+        const blob = await response.blob();
+        await navigator.clipboard.write([
+            new ClipboardItem({
+            [blob.type]: blob
+            })
+        ]);
+        console.log('Image copied.');  
+    ref: https://blog.saeloun.com/2022/06/09/copying-texts-to-clipboard-using-javascript
