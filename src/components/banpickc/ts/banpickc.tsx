@@ -5,77 +5,49 @@ import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-
 import { faFacebook, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import domtoimage from "dom-to-image";
 import CopyToClipboard from 'react-copy-to-clipboard';
+import html2canvas from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
 
-async function copyimg(){
-  /* HAN 20221208 TODO: You need to enable JavaScript to run this app.  */
-  if (navigator.clipboard) {
-    console.log('Clipboard API available');
-  }
-  else {
-    console.log('nono')
-  }
-  const response = await fetch('assets/orrn.jpg');
-  const blob = await response.blob();
-  await navigator.clipboard.write([
-    new ClipboardItem({
-      [blob.type]: blob
-    })
-  ]);
-  console.log('Image copied.');  
-}
-function closetheform() {
-  const el = document.getElementById("sharepopup");
-  if (el != null ) {
-      if (el.style.display === 'none') {
-        el.style.display = 'flex';
-      } else {
-        el.style.display = 'none';
-      }
-  }
-}
 function shareKakaoLink () {
   // @ts-ignore
   window.Kakao.Link.sendCustom({
     templateId: 86600 , // 내가 만든 템플릿 아이디를 넣어주면 된다
   });
 };
-async function capturar(){
-  var node = document.getElementById("banpickbox") as HTMLImageElement;
-  domtoimage.toPng(node)
-    .then(function (dataUrl) {
-      var img = new Image();
-      img.src = dataUrl;
-      console.log(dataUrl);
-      node.appendChild(img);
-
-      // navigator.clipboard.write(dataUrl);
-      // window.Kakao.Share.scrapImage({
-      //   imageUrl: dataUrl,
-      // });
-    });  
-
-}
 function onShareKakaoClick() {
-  capturar();
   // shareKakaoLink();
 };
+
 function Banpickc() {
-  function useEffect(){
-    const script = document.createElement('script')
-    script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
-    script.async = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  } 
+  // function useEffect(){
+  //   const script = document.createElement('script')
+  //   script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+  //   script.async = true
+  //   document.body.appendChild(script)
+  //   return () => {
+  //     document.body.removeChild(script)
+  //   }
+  // } 
   // const text = "ABCD";  
-  useEffect();
-  function sharing() {
-    const url = window.location.href;
-    window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
-    onShareKakaoClick();    
+  // useEffect();
+  // function sharing() {
+  //   const url = window.location.href;
+  //   window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
+  //   onShareKakaoClick();    
+  // }
+
+  const domEl = useRef(null);
+ 
+  const downloadImage = async () => {
+    const dataUrl = await htmlToImage.toPng(domEl.current as any);
+ 
+    // download image
+    const link = document.createElement('a');
+    link.download = "html-to-img.png";
+    link.href = dataUrl;
+    link.click();
   }
+
   return(
   <div className='banpickMain'>   
     <div className="banpickselect">
@@ -87,16 +59,16 @@ function Banpickc() {
         <span className="prefselect">Preference Select</span>
       </div>          
       <div className="bar"></div>
-      <div className="share" onClick={sharing}>
-        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
-      </div>
-      <div className="bar"></div>
-      <div className="share" onClick={closetheform}>
+      <div className="share" onClick={downloadImage}>
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
       <div className="share">
-        <div id="copyToImage" onClick={copyimg}>Hello World!</div>
+        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
+      </div>
+      <div className="bar"></div>
+      <div className="share">
+        <div id="copyToImage" >Hello World!</div>
        {/* <button onClick={() => {
          navigator.clipboard.writeText(text);}}>
         Copy
@@ -116,7 +88,7 @@ function Banpickc() {
         </div>
       </div>
     </div>
-    <div className="banpickbox" id='banpickbox'>
+    <div className="banpickbox" id='banpickbox' ref={domEl}>
     <div className="banbox">
       <div className="banblue">
         <div className="ban" id="blueban1"><img src='assets/cancel.png' alt="logo"></img></div>

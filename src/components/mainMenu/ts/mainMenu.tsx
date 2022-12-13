@@ -52,7 +52,11 @@ function MainMenu() {
           </div>
         </div>
         <div className='mainPageMenuMiddleRight'>
-          안녕하세요
+          <div className='mainPageMenuMiddleRightHotNotice'>
+            <span className='mainPageMenuMiddleRightHotNoticeTitle'>HOT</span>
+            <div className='mainPageMenuMiddleRightHotNoticeMain'>
+            </div>
+          </div>
         </div>
       </div>
       <div className='mainPageMenuRight'></div>

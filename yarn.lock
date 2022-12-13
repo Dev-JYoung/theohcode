@@ -5494,6 +5494,11 @@
     "relateurl" "^0.2.7"
     "terser" "^5.10.0"
 
+"html-to-image@^1.11.1":
+  "integrity" "sha512-W6ZXctQQfhFA2tCcDbK1jCywwT9Oo1ucyXwlxku3zHacyhLPeMhs+h2OLBNeoYrPSgzgeOqhhSs+MbEmL2fDLw=="
+  "resolved" "https://registry.npmjs.org/html-to-image/-/html-to-image-1.11.1.tgz"
+  "version" "1.11.1"
+
 "html-webpack-plugin@^5.5.0":
   "integrity" "sha512-sy88PC2cRTVxvETRgUHFrL4No3UxvcH8G1NepGhqaTT+GXN2kTamqasot0inS5hXeg1cMbFDt27zzo9p35lZVw=="
   "resolved" "https://registry.npmjs.org/html-webpack-plugin/-/html-webpack-plugin-5.5.0.tgz"
