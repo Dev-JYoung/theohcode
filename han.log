@@ -225,3 +225,8 @@ Today I want to 1. copy image to clipboard 2. upload to instagram
         ]);
         console.log('Image copied.');  
     ref: https://blog.saeloun.com/2022/06/09/copying-texts-to-clipboard-using-javascript
+
+### 20221214 ###
+url generation!
+In the downloadImage function > getDownloadURL function!
+ref: https://firebase.google.com/docs/storage/web/upload-files

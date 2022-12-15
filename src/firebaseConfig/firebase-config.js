@@ -7,6 +7,8 @@ import {
   where,
   addDoc,} from '@firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_apiKey,
@@ -47,8 +49,15 @@ const logout = () => {
   signOut(auth);
 };
 
+const storage = getStorage();
+const storageRef = ref(storage, 'some-child');
+
+
+
 export {
+  app,
   auth,
+  storageRef,
   signInWithGoogle,
   logout,
 };
