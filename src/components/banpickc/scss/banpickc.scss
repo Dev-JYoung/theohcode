@@ -255,3 +255,39 @@
 .banpickbox .pickbox .playback .back .i{
 	color: rgba(250,250,250,1);
 }
+
+
+.recommend {
+	background-color: #181818;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;	
+	width: 550px;
+	/* height: 100px;	 */
+}
+
+.recommend .recom-elem {
+	display: flex;
+	background-color: #000000;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width: 80px;
+	height: 80px;	
+	display:inline-block;
+}
+
+.searchchar {
+	background-color: #181818;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;	
+	width: 1120px;
+	height: 500px;	
+}
+
+.searchchar .champs{
+	overflow: auto;	
+	max-width: 1120px;
+	max-height: 480px;	
+}

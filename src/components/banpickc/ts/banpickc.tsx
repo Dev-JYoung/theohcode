@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,41 +10,23 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
 
-function shareKakaoLink () {
-  // @ts-ignore
-  window.Kakao.Link.sendCustom({
-    templateId: 86600 , // 내가 만든 템플릿 아이디를 넣어주면 된다
-  });
-};
-function onShareKakaoClick() {
-  // shareKakaoLink();
-};
-
+function UseEffect() {
+  const script = document.createElement('script')
+  script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
+  script.async = true
+  
+  document.body.appendChild(script)
+  return () => {
+    document.body.removeChild(script)
+  }
+} 
+UseEffect();
 function Banpickc() {
-  // function useEffect(){
-  //   const script = document.createElement('script')
-  //   script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
-  //   script.async = true
-  //   document.body.appendChild(script)
-  //   return () => {
-  //     document.body.removeChild(script)
-  //   }
-  // } 
-  // const text = "ABCD";  
-  // useEffect();
-  // function sharing() {
-  //   const url = window.location.href;
-  //   window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
-  //   onShareKakaoClick();    
-  // }
-
   const domEl = useRef(null);
  
   const downloadImage = async () => {
+    console.log('started banpickc')
     var dataBlob = await htmlToImage.toBlob(domEl.current as any);
-    // uploadBytes(storageRef, dataBlob).then((snapshot) => {
-    //   console.log('Uploaded a blob or file!');
-    // });
 
     const uploadTask = uploadBytesResumable(storageRef, dataBlob);
     uploadTask.on('state_changed', 
@@ -71,21 +53,52 @@ function Banpickc() {
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
+      const url = window.location.href; 
+      window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
+      console.log(window.Kakao.isInitialized());
+
+      // window.Kakao.Auth.authorize({
+      //   redirectUri: url,
+      // });
+
+      window.Kakao.Link.createDefaultButton({
+        container: '#test',
+        objectType: 'feed',
+        content: {
+          title: 'banpick',
+          description: 'banpick',
+          imageUrl: downloadURL,
+          link: {
+            mobileWebUrl: url,
+            webUrl: url
+          }
+        },
+        buttons: [
+          {
+            title: '버튼 타이틀',
+            link: {
+              mobileWebUrl: url,
+              webUrl: url
+            }
+          }
+        ]
+      });
+
     });
     }
   );
 
-    const dataUrl = await htmlToImage.toPng(domEl.current as any);
- 
-    // download image
-    const link = document.createElement('a');
-    link.download = "html-to-img.png";
-    link.href = dataUrl;
-    link.click();
+  const dataUrl = await htmlToImage.toPng(domEl.current as any);
+
+    // // download image
+    // const link = document.createElement('a');
+    // link.download = "html-to-img.png";
+    // link.href = dataUrl;
+    // link.click();
   }
 
   return(
-  <div className='banpickMain'>   
+  <div className='banpickMain'>  
     <div className="banpickselect">
       <div className="banpickmenumain">
         <span className="banpickmenu">Ban/Pick Menu</span>
@@ -99,17 +112,7 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
-      <div className="share">
-        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
-      </div>
-      <div className="bar"></div>
-      <div className="share">
-        <div id="copyToImage" >Hello World!</div>
-       {/* <button onClick={() => {
-         navigator.clipboard.writeText(text);}}>
-        Copy
-       </button> */}
-      </div>
+
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>
@@ -124,6 +127,7 @@ function Banpickc() {
         </div>
       </div>
     </div>
+    <div className='test' id='test' style={{color:"white"}}>checkcheck</div> 
     <div className="banpickbox" id='banpickbox' ref={domEl}>
     <div className="banbox">
       <div className="banblue">
@@ -168,6 +172,18 @@ function Banpickc() {
       </div>  
     </div>
   </div>    
+  <div className="recommend">
+    <div className="recom-elem"></div>
+    <div className="recom-elem"></div>
+    <div className="recom-elem"></div>
+    <div className="recom-elem"></div>
+    <div className="recom-elem"></div>          
+  </div>
+  <div className="searchchar">
+    <div className="search"></div>
+    <div className="champs"></div>
+  </div>
+
 </div>
   )
 }
