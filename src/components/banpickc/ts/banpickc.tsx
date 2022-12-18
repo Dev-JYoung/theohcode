@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState} from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareNodes, faPlay, faRotateLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,18 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
 
+function popup(){
+const el = document.getElementById("sharepopup");
+if (el != null ) {
+    if (el.style.display === 'none') {
+      el.style.display = 'block';
+      el.style.display = 'flex';
+    } else {
+      el.style.display = 'none';
+    }
+  }
+}
+
 function UseEffect() {
   const script = document.createElement('script')
   script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
@@ -20,6 +32,7 @@ function UseEffect() {
     document.body.removeChild(script)
   }
 } 
+
 UseEffect();
 function Banpickc() {
   const domEl = useRef(null);
@@ -112,7 +125,10 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
-
+      <div className="share" onClick={popup}>
+        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
+      </div>
+      <div className="bar"></div>
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>
@@ -181,7 +197,12 @@ function Banpickc() {
   </div>
   <div className="searchchar">
     <div className="search"></div>
-    <div className="champs"></div>
+    <div className="champs">
+    <div className="leftimages">
+      <img src='assets/champsquare/Aatrox.png' className="sqimg" id="Aatrox"></img>
+      <span className="championname">Aatrox</span>
+    </div>
+    </div>
   </div>
 
 </div>

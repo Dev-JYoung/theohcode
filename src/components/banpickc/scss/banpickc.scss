@@ -291,3 +291,21 @@
 	max-width: 1120px;
 	max-height: 480px;	
 }
+
+
+.champs .leftimages{
+	display: flex;	
+	float:left;
+	flex-direction: column;	
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;	
+}
+.champs .leftimages .championname{
+	display: flex;
+	font-size: 8pt;
+	font-weight: 500;
+	align-items: center;
+	justify-content: center;
+}
