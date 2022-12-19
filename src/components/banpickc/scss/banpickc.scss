@@ -286,6 +286,24 @@
 	height: 500px;	
 }
 
+.searchchar .locseach {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.searchchar .locseach .i{
+	margin-left: 5px;
+	color: rgba(250,250,250,1);
+}
+
+.searchchar .searched {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	color: white;
+}
+
 .searchchar .champs{
 	overflow: auto;	
 	max-width: 1120px;

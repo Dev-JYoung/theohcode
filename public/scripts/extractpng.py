@@ -12,14 +12,7 @@ print('Removing previous rectangle/square photo files...')
 dirnamerec = '../assets/champrec'
 dirnamesq = '../assets/champsquare'
 
-test = os.listdir(dirnamerec)
-for item in test:
-    if item.endswith(".jpg"):
-        os.remove(os.path.join(dirnamerec, item))
-test = os.listdir(dirnamesq)
-for item in test:
-    if item.endswith(".png"):
-        os.remove(os.path.join(dirnamesq, item))        
+     
 
 print('Getting the latest league of legends version')
 # Get latest version in ddrangon
@@ -34,19 +27,41 @@ with urllib.request.urlopen('http://ddragon.leagueoflegends.com/cdn/'+latestvers
    html = response.read()
 championjson = json.loads(html)
 champlist =championjson["data"].keys()
-fl.write(str(champlist))
+lenchamp = len(champlist)
+champstr = 'var champ = [\n'
+for idx, elem in enumerate(champlist):
+   champstr = champstr + "{title:'" + elem + "'}"
+   if idx != lenchamp -1:
+      champstr = champstr + ',\n'
+
+champstr = champstr + "];"
+
+fl.write(str(champstr))
 print('Champion name is ...')
 print(champlist)
 
-print('Downloading all squre/png files ...')
-# get squre pics in ../assets/champsquare directory
-for champ in champlist:
-   url = 'http://ddragon.leagueoflegends.com/cdn/'+latestversion+'/img/champion/'+champ+'.png'
-   image_filename = wget.download(url, out = '../assets/champsquare')
 
-# get rect pics in ../assets/champrec directory
-for champ in champlist:
-   url = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+champ+'_0.jpg'
-   image_filename = wget.download(url, out = '../assets/champrec')
+if False:
+   # Remove the dir which contains .jpg and .png files
+   test = os.listdir(dirnamerec)
+   for item in test:
+      if item.endswith(".jpg"):
+         os.remove(os.path.join(dirnamerec, item))
+   test = os.listdir(dirnamesq)
+   for item in test:
+      if item.endswith(".png"):
+         os.remove(os.path.join(dirnamesq, item))   
 
-print('Done to download photo files!')
+
+   print('Downloading all squre/png files ...')
+   # get squre pics in ../assets/champsquare directory
+   for champ in champlist:
+      url = 'http://ddragon.leagueoflegends.com/cdn/'+latestversion+'/img/champion/'+champ+'.png'
+      image_filename = wget.download(url, out = '../assets/champsquare')
+
+   # get rect pics in ../assets/champrec directory
+   for champ in champlist:
+      url = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+champ+'_0.jpg'
+      image_filename = wget.download(url, out = '../assets/champrec')
+
+   print('Done to download photo files!')
