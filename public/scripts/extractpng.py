@@ -30,7 +30,7 @@ champlist =championjson["data"].keys()
 lenchamp = len(champlist)
 champstr = 'var champ = [\n'
 for idx, elem in enumerate(champlist):
-   champstr = champstr + "{title:'" + elem + "'}"
+   champstr = champstr + "{title:'" + elem + "', path:'assets/champsquare/"+elem+".png'}"
    if idx != lenchamp -1:
       champstr = champstr + ',\n'
 
