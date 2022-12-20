@@ -1,7 +1,9 @@
 import React from 'react';
 import "../scss/mainMenu.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 
-function MainMenu() {
+function MainMenu({data}:{data: any}) {
   return(
     <div className='mainPageBoardMenu'>
       <div className='mainPageMenuLeft'></div>
@@ -21,7 +23,6 @@ function MainMenu() {
               <span className='mainPagePickBanStatusLeagueTitle'>LCS</span>
               <div className="bar"></div>
               <span className='mainPagePickBanStatusLeagueTitle'>LJL</span>
-              <div className="bar"></div>
             </div>
           </div>
           <div className='mainPageLeagueBanPickStatus'>
@@ -53,8 +54,9 @@ function MainMenu() {
         </div>
         <div className='mainPageMenuMiddleRight'>
           <div className='mainPageMenuMiddleRightHotNotice'>
-            <span className='mainPageMenuMiddleRightHotNoticeTitle'>HOT</span>
+            <span className='mainPageMenuMiddleRightHotNoticeTitle'>HOT<FontAwesomeIcon className="iconFire" icon={faFire}/></span>
             <div className='mainPageMenuMiddleRightHotNoticeMain'>
+
             </div>
           </div>
         </div>

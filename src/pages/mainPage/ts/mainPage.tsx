@@ -4,6 +4,7 @@ import Slider from "../../../components/slider/ts/slider";
 import Warning from "../../../components/warning/ts/warning";
 import { SliderData } from "../../../components/slider/data/slideData";
 import MainMenu from "../../../components/mainMenu/ts/mainMenu";
+import dataMain from "../../../components/mainMenu/data/data.json";
 
 function MainPage() {
   return(
@@ -12,7 +13,7 @@ function MainPage() {
       <MenuBar/>
       <Warning warning="Website will go down 2022-10-25 18:00 due to maintence. Sorry for Inconvinience."/>
       <Slider slides={SliderData}/>
-      <MainMenu/>
+      <MainMenu data={dataMain}/>
     </div>
   )
 }

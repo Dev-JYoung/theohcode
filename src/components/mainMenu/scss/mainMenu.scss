@@ -305,6 +305,16 @@ body {
           font-size: 14pt;
           font-weight: 700;
         }
+
+        .iconFire {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          margin-left: 5px;
+          color: rgba(239, 35, 60, 1);
+        }
       }
     }
   }
