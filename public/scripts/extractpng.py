@@ -5,7 +5,7 @@ import json
 
 import urllib.request
 
-fl = open('champlist.txt', 'w')
+fl = open('champlist.json', 'w')
 
 print('Removing previous rectangle/square photo files...')
 # remove all the .png files from champrec and champsquare directory
@@ -30,13 +30,20 @@ champlist =championjson["data"].keys()
 lenchamp = len(champlist)
 champstr = 'var champ = [\n'
 for idx, elem in enumerate(champlist):
-   champstr = champstr + "{title:'" + elem + "', path:'assets/champsquare/"+elem+".png'}"
-   if idx != lenchamp -1:
-      champstr = champstr + ',\n'
+   fl.write('{\n')
+   fl.write('\t "id": '+str(idx+1)+',\n')
+   fl.write('\t "title": "'+elem+'",\n')
+   fl.write('\t "path": "assets/champsquare/'+elem+'.png",\n')
+   fl.write('},\n')
 
-champstr = champstr + "];"
 
-fl.write(str(champstr))
+#    champstr = champstr + "{title:'" + elem + "', path:'assets/champsquare/"+elem+".png'}"
+#    if idx != lenchamp -1:
+#       champstr = champstr + ',\n'
+
+# champstr = champstr + "];"
+
+# fl.write(str(champstr))
 print('Champion name is ...')
 print(champlist)
 
