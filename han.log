@@ -230,3 +230,7 @@ Today I want to 1. copy image to clipboard 2. upload to instagram
 url generation!
 In the downloadImage function > getDownloadURL function!
 ref: https://firebase.google.com/docs/storage/web/upload-files
+
+### 20221219 ###
+searching: ref: https://velog.io/@jahommer/React-%EA%B2%80%EC%83%89%EC%B0%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
+need to add the champ list: var champ = []
