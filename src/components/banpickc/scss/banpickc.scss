@@ -283,7 +283,7 @@
 	margin-left: auto;
 	margin-right: auto;	
 	width: 1120px;
-	height: 500px;	
+	// height: 500px;	
 }
 
 .searchchar .locseach {
@@ -300,37 +300,15 @@
 .searchchar .champsearched {
 	display: flex;	
 	flex-direction: row;
+		
 }
 .searchchar .champsearched .searched {
-	display: flex;
-	width: 1120px;
-	// height: 500px;	
-	// align-items: center;
-	// justify-content: center;	
-	flex-direction: col;
+	width: 150px;
 	color: white;
+	float: right;
+	margin: 0px 0px 15px 15px;
 }
 
-.searchchar .champs{
-	overflow: auto;	
-	max-width: 1120px;
-	max-height: 480px;	
-}
-
-
-.champs .leftimages{
-	display: flex;	
-	float:left;
-	flex-direction: column;	
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-bottom: 20px;
-	margin-right: 20px;	
-}
-.champs .leftimages .championname{
-	display: flex;
-	font-size: 8pt;
-	font-weight: 500;
-	align-items: center;
-	justify-content: center;
+ul {
+    list-style-type: none;
 }

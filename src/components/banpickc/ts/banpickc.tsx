@@ -376,17 +376,13 @@ function Banpickc() {
         <FontAwesomeIcon className="i" icon={faMagnifyingGlass}/>  
       </div>
       <div className="champsearched">
-        {filterTitle.map(champ => <div className="searched">
-        <img src={champ.path}></img>
-        <span>{champ.title}</span>
-        </div>)}
+        <ul>
+          {filterTitle.map(champ => <li className="searched">
+          <img src={champ.path}></img>
+          <span>{champ.title}</span>
+          </li>)}
+        </ul>
       </div>
-    </div>
-    <div className="champs">
-    <div className="leftimages">
-      <img src='assets/champsquare/Aatrox.png' className="sqimg" id="Aatrox"></img>
-      <span className="championname">Aatrox</span>
-    </div>
     </div>
   </div>
 
