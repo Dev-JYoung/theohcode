@@ -234,3 +234,11 @@ ref: https://firebase.google.com/docs/storage/web/upload-files
 ### 20221219 ###
 searching: ref: https://velog.io/@jahommer/React-%EA%B2%80%EC%83%89%EC%B0%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
 need to add the champ list: var champ = []
+
+### 20221221 ###
+facebook share: ref: https://devpad.tistory.com/53 (twitter included as well)
+function shareFacebook() {
+    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+-> changed the sendUrl to my uploaded url, it is working

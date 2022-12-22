@@ -198,6 +198,8 @@ function UseEffect() {
   }
 } 
 
+
+
 UseEffect();
 function Banpickc() {
 
@@ -240,36 +242,35 @@ function Banpickc() {
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
-      const url = window.location.href; 
-      window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
-      console.log(window.Kakao.isInitialized());
+      window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
+      console.log('downloaded')
 
-      // window.Kakao.Auth.authorize({
-      //   redirectUri: url,
+      // const url = window.location.href; 
+      // window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
+      // console.log(window.Kakao.isInitialized());
+
+      // window.Kakao.Link.createDefaultButton({
+      //   container: '#test',
+      //   objectType: 'feed',
+      //   content: {
+      //     title: 'banpick',
+      //     description: 'banpick',
+      //     imageUrl: downloadURL,
+      //     link: {
+      //       mobileWebUrl: url,
+      //       webUrl: url
+      //     }
+      //   },
+      //   buttons: [
+      //     {
+      //       title: '버튼 타이틀',
+      //       link: {
+      //         mobileWebUrl: url,
+      //         webUrl: url
+      //       }
+      //     }
+      //   ]
       // });
-
-      window.Kakao.Link.createDefaultButton({
-        container: '#test',
-        objectType: 'feed',
-        content: {
-          title: 'banpick',
-          description: 'banpick',
-          imageUrl: downloadURL,
-          link: {
-            mobileWebUrl: url,
-            webUrl: url
-          }
-        },
-        buttons: [
-          {
-            title: '버튼 타이틀',
-            link: {
-              mobileWebUrl: url,
-              webUrl: url
-            }
-          }
-        ]
-      });
 
     });
     }
