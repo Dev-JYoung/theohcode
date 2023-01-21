@@ -198,7 +198,9 @@ function UseEffect() {
   }
 } 
 
-
+function echoing(something){
+  console.log(something);
+}
 
 UseEffect();
 function Banpickc() {
@@ -378,7 +380,7 @@ function Banpickc() {
       </div>
       <div className="champsearched">
         <ul>
-          {filterTitle.map(champ => <li className="searched">
+          {filterTitle.map(champ => <li className="searched"  onClick={echoing(champ.title)}>
           <img src={champ.path}></img>
           <span>{champ.title}</span>
           </li>)}

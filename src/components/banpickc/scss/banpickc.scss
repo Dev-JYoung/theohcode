@@ -278,31 +278,43 @@
 }
 
 .searchchar {
+	display: flex;
 	background-color: #181818;
 	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;	
+	// margin-left: auto;
+	// margin-right: auto;	
 	width: 1120px;
 	// height: 500px;	
 }
-
-.searchchar .locseach {
+.searchchar .search {
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+	background-color: #090909;
+}
+.searchchar .search .locseach {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.searchchar .locseach .i{
-	margin-left: 5px;
+.searchchar .search .locseach .i{
+	// margin-left: 5px;
 	color: rgba(250,250,250,1);
 }
 
-.searchchar .champsearched {
+.searchchar .search .champsearched {
 	display: flex;	
+	align-items: center;
+	justify-content: center;	
+	margin-left: auto;	
+	margin-right: auto;	
 	flex-direction: row;
 		
 }
-.searchchar .champsearched .searched {
+.searchchar .search .champsearched .searched {
+	display: flex;	
+	flex-direction: column;
 	width: 150px;
 	color: white;
 	float: right;
