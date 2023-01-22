@@ -22,6 +22,14 @@ if (el != null ) {
   }
 }
 
+
+// HAN 20230122 to order for square box
+var order = ['blueban1', 'blueban2', 'blueban3', 'blueban4', 'blueban5', 
+            'redban1', 'redban2', 'redban3', 'redban4', 'redban5',
+            'bluepick1', 'bluepick2', 'bluepick3', 'bluepick4', 'bluepick5', 
+            'redpick1', 'redpick2', 'redpick3', 'redpick4', 'redpick5'];
+var currentchamp = 0;
+
 // HAN 20221219 to make a search bar
 var champ = [
   {title:'Aatrox', path:'assets/champsquare/Aatrox.png'},
@@ -198,8 +206,18 @@ function UseEffect() {
   }
 } 
 
-function echoing(something){
-  console.log(something);
+function echoing(champ){
+  console.log(order[currentchamp]);
+  console.log(champ.title)
+  var img = document.createElement('img');
+  img.src = 'assets/champsquare/'+champ.title+'.png';
+  document.getElementById(order[currentchamp]).innerHTML = '<img width="100" height="100" src="'+img.src+'">'
+  // let node = document.getElementById(order[currentchamp]);
+  // if (node.parentNode){
+  //   node.parentNode.removeChild(node);
+  // }
+  // document.getElementById(order[currentchamp]).appendChild(img);
+  currentchamp = currentchamp + 1;
 }
 
 UseEffect();
