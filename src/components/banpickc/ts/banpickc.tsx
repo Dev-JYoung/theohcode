@@ -380,7 +380,8 @@ function Banpickc() {
       </div>
       <div className="champsearched">
         <ul>
-          {filterTitle.map(champ => <li className="searched"  onClick={echoing(champ.title)}>
+          {filterTitle.map(champ => 
+          <li className="searched" onClick={()=>echoing(champ)}>
           <img src={champ.path}></img>
           <span>{champ.title}</span>
           </li>)}
