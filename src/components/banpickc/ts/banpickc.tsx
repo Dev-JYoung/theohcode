@@ -210,14 +210,22 @@ function echoing(champ){
   console.log(order[currentchamp]);
   console.log(champ.title)
   var img = document.createElement('img');
-  img.src = 'assets/champsquare/'+champ.title+'.png';
-  document.getElementById(order[currentchamp]).innerHTML = '<img width="100" height="100" src="'+img.src+'">'
+  
+  if (currentchamp <=9){
+    img.src = 'assets/champsquare/'+champ.title+'.png';
+    document.getElementById(order[currentchamp]).innerHTML = '<img width="50" height="50" src="'+img.src+'">'
+  } else{
+    img.src = 'assets/champrec/'+champ.title+'_0.jpg';
+    document.getElementById(order[currentchamp]).innerHTML = '<img width="73" height="146" src="'+img.src+'">'
+  }
+  
   // let node = document.getElementById(order[currentchamp]);
   // if (node.parentNode){
   //   node.parentNode.removeChild(node);
   // }
   // document.getElementById(order[currentchamp]).appendChild(img);
   currentchamp = currentchamp + 1;
+  currentchamp = currentchamp % 20;
 }
 
 UseEffect();
