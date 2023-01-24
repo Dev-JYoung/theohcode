@@ -216,7 +216,7 @@ function echoing(champ){
     document.getElementById(order[currentchamp]).innerHTML = '<img width="50" height="50" src="'+img.src+'">'
   } else{
     img.src = 'assets/champrec/'+champ.title+'_0.jpg';
-    document.getElementById(order[currentchamp]).innerHTML = '<img width="73" height="146" src="'+img.src+'">'
+    document.getElementById(order[currentchamp]).innerHTML = '<img width="73" height="133" src="'+img.src+'">'
   }
   
   // let node = document.getElementById(order[currentchamp]);
@@ -225,6 +225,20 @@ function echoing(champ){
   // }
   // document.getElementById(order[currentchamp]).appendChild(img);
   currentchamp = currentchamp + 1;
+  currentchamp = currentchamp % 20;
+}
+
+
+function addone(){
+  currentchamp = currentchamp + 1;
+  currentchamp = currentchamp % 20;
+}
+
+function removeone(){
+  currentchamp = currentchamp - 1;
+  if (currentchamp<0){
+    currentchamp = currentchamp + 20
+  }
   currentchamp = currentchamp % 20;
 }
 
@@ -375,10 +389,10 @@ function Banpickc() {
         <div className="pick" id="bluepick5"></div>
       </div>
       <div className='playback'>
-        <div className="play" id="play">
+        <div className="play" id="play" onClick={addone}>
           <FontAwesomeIcon className="i" icon={faPlay}/>
         </div>
-        <div className="back" id="back">
+        <div className="back" id="back" onClick={removeone}>
           <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
         </div>   
       </div>
