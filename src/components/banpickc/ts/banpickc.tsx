@@ -286,34 +286,6 @@ function Banpickc() {
       console.log('File available at', downloadURL);
       window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
       console.log('downloaded')
-
-      // const url = window.location.href; 
-      // window.Kakao.init(process.env.REACT_APP_kakaoJavascriptKey);
-      // console.log(window.Kakao.isInitialized());
-
-      // window.Kakao.Link.createDefaultButton({
-      //   container: '#test',
-      //   objectType: 'feed',
-      //   content: {
-      //     title: 'banpick',
-      //     description: 'banpick',
-      //     imageUrl: downloadURL,
-      //     link: {
-      //       mobileWebUrl: url,
-      //       webUrl: url
-      //     }
-      //   },
-      //   buttons: [
-      //     {
-      //       title: '버튼 타이틀',
-      //       link: {
-      //         mobileWebUrl: url,
-      //         webUrl: url
-      //       }
-      //     }
-      //   ]
-      // });
-
     });
     }
   );
@@ -360,51 +332,53 @@ function Banpickc() {
         </div>
       </div>
     </div>
-    <div className='test' id='test' style={{color:"white"}}>checkcheck</div> 
-    <div className="banpickbox" id='banpickbox' ref={domEl}>
-    <div className="banbox">
-      <div className="banblue">
-        <div className="ban" id="blueban1"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="blueban2"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="blueban3"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="blueban4"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="blueban5"><img src='assets/cancel.png' alt="logo"></img></div>
-        <span className="blue">BLUE</span>
-      </div>
-      <div className="banred">
-        <span className="red">RED</span>
-        <div className="ban" id="redban1"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="redban2"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="redban3"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="redban4"><img src='assets/cancel.png' alt="logo"></img></div>
-        <div className="ban" id="redban5"><img src='assets/cancel.png' alt="logo"></img></div>
-      </div>
-    </div>
-    <div className="pickbox">
-      <div className='bluepick'>
-        <div className="pick" id="bluepick1"></div>
-        <div className="pick" id="bluepick2"></div>
-        <div className="pick" id="bluepick3"></div>
-        <div className="pick" id="bluepick4"></div>
-        <div className="pick" id="bluepick5"></div>
-      </div>
-      <div className='playback'>
-        <div className="play" id="play" onClick={addone}>
-          <FontAwesomeIcon className="i" icon={faPlay}/>
+    {/* <div className='test' id='test' style={{color:"white"}}>checkcheck</div>  */}
+    <div className="banpickbox" id='banpickbox'>
+      <div className="snip" id='snip' ref={domEl}>
+        <div className="banbox">
+          <div className="banblue">
+            <div className="ban" id="blueban1"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="blueban2"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="blueban3"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="blueban4"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="blueban5"><img src='assets/cancel.png' alt="logo"></img></div>
+            <span className="blue">BLUE</span>
+          </div>
+          <div className="banred">
+            <span className="red">RED</span>
+            <div className="ban" id="redban1"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="redban2"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="redban3"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="redban4"><img src='assets/cancel.png' alt="logo"></img></div>
+            <div className="ban" id="redban5"><img src='assets/cancel.png' alt="logo"></img></div>
+          </div>
         </div>
-        <div className="back" id="back" onClick={removeone}>
-          <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
-        </div>   
+        <div className="pickbox">
+          <div className='bluepick'>
+            <div className="pick" id="bluepick1"></div>
+            <div className="pick" id="bluepick2"></div>
+            <div className="pick" id="bluepick3"></div>
+            <div className="pick" id="bluepick4"></div>
+            <div className="pick" id="bluepick5"></div>
+          </div>
+          <div className='playback'>
+            <div className="play" id="play" onClick={addone}>
+              <FontAwesomeIcon className="i" icon={faPlay}/>
+            </div>
+            <div className="back" id="back" onClick={removeone}>
+              <FontAwesomeIcon className="i" icon={faRotateLeft}/>  
+            </div>   
+          </div>
+          <div className='redpick'>       
+            <div className="pick" id="redpick1"></div>
+            <div className="pick" id="redpick2"></div>
+            <div className="pick" id="redpick3"></div>
+            <div className="pick" id="redpick4"></div>
+            <div className="pick" id="redpick5"></div>
+          </div>  
       </div>
-      <div className='redpick'>       
-        <div className="pick" id="redpick1"></div>
-        <div className="pick" id="redpick2"></div>
-        <div className="pick" id="redpick3"></div>
-        <div className="pick" id="redpick4"></div>
-        <div className="pick" id="redpick5"></div>
-      </div>  
-    </div>
-  </div>    
+    </div>    
+  </div>
   <div className="recommend">
     <div className="recom-elem"></div>
     <div className="recom-elem"></div>

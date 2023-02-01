@@ -117,22 +117,22 @@
 	margin-bottom: 60px;
 	background-color: #090909;
 }
-.banpickbox .banbox {
+.banpickbox .snip .banbox {
 	display: flex;
 	flex-direction: row;
 }
-.banpickbox .banbox .banblue{
+.banpickbox .snip .banbox .banblue{
 	display: flex;
 	flex-direction: row;
 	margin-left: 20px;
 }
-.banpickbox .banbox .banred{
+.banpickbox .snip .banbox .banred{
 	display: flex;
 	flex-direction: row;
 	margin-left: auto;
 	margin-right: 20px;
 }
-.banpickbox .banbox .banred .ban{
+.banpickbox .snip .banbox .banred .ban{
 	margin-top: 20px;
 	margin-left: 7px;
 	margin-right: 7px;	
@@ -143,7 +143,7 @@
 	width: 50px;
 	height: 50px;
 }
-.banpickbox .banbox .banblue .ban{
+.banpickbox .snip .banbox .banblue .ban{
 	margin-top: 20px;
 	margin-left: 7px;
 	margin-right: 7px;	
@@ -154,7 +154,7 @@
 	width: 50px;
 	height: 50px;
 }
-.banpickbox .banbox .banblue .blue{
+.banpickbox .snip .banbox .banblue .blue{
 	margin-top: 20px;
 	margin-left: 13px;
 	margin-right: 15px;	
@@ -168,7 +168,7 @@
 	font-size: 15pt;
 	font-weight: bold;
 }
-.banpickbox .banbox .banred .red{
+.banpickbox .snip .banbox .banred .red{
 	margin-top: 20px;
 	margin-left: 15px;
 	margin-right: 13px;	
@@ -183,7 +183,7 @@
 	font-weight: bold;
 }
 
-.banpickbox .pickbox {
+.banpickbox .snip .pickbox {
 	margin-top: 3px;
 	display: flex;
 	flex-direction: row;
@@ -191,17 +191,17 @@
 	justify-content: center;		
 }
 
-.banpickbox .pickbox .bluepick {
+.banpickbox .snip .pickbox .bluepick {
 	display: flex;
 	// flex-direction: row;
 }
 
-.banpickbox .pickbox .redpick {
+.banpickbox .snip .pickbox .redpick {
 	display: flex;
 	// flex-direction: row-reverse;
 }
 
-.banpickbox .pickbox .bluepick .pick{
+.banpickbox .snip .pickbox .bluepick .pick{
 	margin-top: 15px;
 	margin-left: 5px;
 	margin-right: 5px;	
@@ -210,7 +210,7 @@
 	height: 133px;
 }
 
-.banpickbox .pickbox .redpick .pick{
+.banpickbox .snip .pickbox .redpick .pick{
 	margin-top: 15px;
 	margin-left: 5px;
 	margin-right: 5px;	
@@ -219,14 +219,14 @@
 	height: 133px;
 }
 
-.banpickbox .pickbox .playback{
+.banpickbox .snip .pickbox .playback{
 	display: inline-flex;
 	flex-direction: row;
 	width: 244px;
 	justify-content: center;
 	margin-top: auto;		
 }
-.banpickbox .pickbox .playback .play{
+.banpickbox .snip .pickbox .playback .play{
 	margin-top: 15px;
 	margin-left: 15px;
 	margin-right: 15px;	
@@ -237,11 +237,11 @@
 	align-items: center;
 	justify-content: center;	
 }
-.banpickbox .pickbox .playback .play .i{
+.banpickbox .snip .pickbox .playback .play .i{
 	color: rgba(250,250,250,1);
 }
 
-.banpickbox .pickbox .playback .back{
+.banpickbox .snip .pickbox .playback .back{
 	margin-top: 15px;
 	margin-left: 15px;
 	margin-right: 15px;	
@@ -252,7 +252,7 @@
 	align-items: center;
 	justify-content: center;	
 }
-.banpickbox .pickbox .playback .back .i{
+.banpickbox .snip .pickbox .playback .back .i{
 	color: rgba(250,250,250,1);
 }
 
