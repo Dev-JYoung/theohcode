@@ -285,6 +285,7 @@ function Banpickc() {
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
       window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
+      window.open("https://twitter.com/intent/tweet?text=My guess&url=" + downloadURL);
       console.log('downloaded')
     });
     }
@@ -395,7 +396,7 @@ function Banpickc() {
       <div className="champsearched">
         <ul>
           {filterTitle.map(champ => 
-          <li className="searched" onClick={()=>echoing(champ)}>
+          <li key={champ.title} className="searched" onClick={()=>echoing(champ)}>
           <img src={champ.path}></img>
           <span>{champ.title}</span>
           </li>)}
