@@ -315,10 +315,10 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
-      <div className="share" onClick={popup}>
+      {/* <div className="share" onClick={popup}>
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
-      <div className="bar"></div>
+      <div className="bar"></div> */}
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>

@@ -318,10 +318,13 @@
 	flex-direction: column;
 	width: 70px;
 	color: white;
-	float: right;
+	float: left;
 	margin: 0px 0px 15px 15px;
 }
-
+.searchchar .search .champsearched .searched span {
+	font-size: 8pt;
+	text-align: center;
+}
 ul {
     list-style-type: none;
 }
