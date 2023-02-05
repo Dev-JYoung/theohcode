@@ -10,7 +10,9 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
 
+var URLstorage = '';
 function popup(){
+console.log(URLstorage);
 const el = document.getElementById("sharepopup");
 if (el != null ) {
     if (el.style.display === 'none') {
@@ -283,6 +285,7 @@ function Banpickc() {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      URLstorage = downloadURL;
       console.log('File available at', downloadURL);
       window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
       window.open("https://twitter.com/intent/tweet?text=My guess&url=" + downloadURL);
@@ -315,10 +318,10 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
-      {/* <div className="share" onClick={popup}>
+      <div className="share" onClick={popup}>
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
-      <div className="bar"></div> */}
+      <div className="bar"></div>
     </div>
     <div className="sharepopup" id='sharepopup'>
       <div className='sharepopupcont'>
