@@ -242,3 +242,11 @@ function shareFacebook() {
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
 }
 -> changed the sendUrl to my uploaded url, it is working
+
+### 20230205 ###
+When I want to add page:
+1. Make a page under src > pages > <...>
+2. Go to App.tsx
+3. Add line <Route path="/write" element={<WritePage />}/>
+4. Add import 
+    import WritePage from './pages/write/ts/write';
