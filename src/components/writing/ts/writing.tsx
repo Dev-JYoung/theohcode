@@ -17,8 +17,8 @@ function Writing() {
               글쓰기
             </div>
             <div className='enrollbtn'>등록</div>
-            
           </div>
+          <div className='headbar'></div>
         </div>
       하이하이
       </div>
