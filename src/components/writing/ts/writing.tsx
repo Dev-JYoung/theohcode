@@ -13,7 +13,11 @@ function Writing() {
       <div className='content'>
         <div className='window'>
           <div className='windowHead'>
-            글쓰기
+            <div className='titlehead'>
+              글쓰기
+            </div>
+            <div className='enrollbtn'>등록</div>
+            
           </div>
         </div>
       하이하이

@@ -39,11 +39,36 @@ body {
 
 .writePage .content .window .windowHead{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   // align-items: center;
   height: 45px;
   width: 1120px;
   color:rgb(255, 255, 255);
   font-size: 25px;
   background-color: rgb(0, 0, 0);
+}
+
+.writePage .content .window .windowHead .titlehead{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  // align-items: center;
+  height: 45px;
+  width: 1120px;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(0, 0, 0);
+}
+
+.writePage .content .window .windowHead .enrollbtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45px;
+  width: 100px;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(255, 115, 34);
+  border: none;
+  border-radius: 4px;
 }
