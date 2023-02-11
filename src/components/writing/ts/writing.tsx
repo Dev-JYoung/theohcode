@@ -20,8 +20,7 @@ function Writing() {
     console.log('abcabc')
     // var txt = ref.current.value;
     const db = getFirestore(app);
-    const docRef = await addDoc(collection(db, "cities"), {
-      name: "Tokyo",
+    const docRef = await addDoc(collection(db, "write"), {
       text: getValue
     });
   }
@@ -38,7 +37,7 @@ function Writing() {
             <div className='enrollbtn' onClick={putDB}>등록</div>
           </div>
           <div className='headbar'></div>
-          <input name="textbody" id='textbody'
+          <textarea name="textbody" id='textbody' className="textbody"
           // value={message}
           spellCheck='false'
           onChange={handleMessageChange}/>
