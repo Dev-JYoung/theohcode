@@ -86,13 +86,64 @@ body {
   background-color: rgb(255, 115, 34);
 }
 
+.writePage .content .window .board{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 1120px;
+  // height: 50px;
+  // background-color: rgb(255, 115, 34);
+}
+.writePage .content .window .board .boardtitle{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 125px;
+  font-size: 15pt;
+  // height: 50px;
+}
+.writePage .content .window .board .boardSetting{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 125px;
+  height: 25px;
+}
+
+.writePage .content .window .title{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin-top: 10px;
+  margin-left: 50px;
+  width: 1120px;
+}
+.writePage .content .window .title .titleUser{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 125px;
+  font-size: 15pt;
+  // height: 50px;
+}
+.writePage .content .window .title .titleWrite{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 920px;
+  height: 25px;
+}
+
 .writePage .content .window .textbody{
   vertical-align: top;
+  margin-top: 15px;
   // display:flex;
   // flex-direction: column;
   // // align-items: center;
-  width: 1116px;
-  height: 300px;
+  width: 1070px;
+  height: 480px;
   font-size: 25px;
   background-color: rgb(255, 255, 255);
 }
