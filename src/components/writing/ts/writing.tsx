@@ -11,28 +11,25 @@ function Writing() {
   var getValue ='';
   // const [message, setMessage] = useState('');
   const handleMessageChange = event => {
-    // 👇️ access textarea value
     getValue = event.target.value;
-    console.log(getValue);
+    // console.log(getValue);
   };
 
   var titleValue = '';
   const handleTitleChange = event => {
-    // 👇️ access textarea value
     titleValue = event.target.value;
-    console.log(titleValue);
+    // console.log(titleValue);
   };
 
   var boardValue = '';
   const handleBoardChange = event => {
-    // 👇️ access textarea value
     boardValue = event.target.value;
-    console.log(boardValue);
+    // console.log(boardValue);
   };  
 
   async function putDB(){
     // const ref = useRef(null);
-    console.log('abcabc')
+    console.log('upload to firebase DB')
     // var txt = ref.current.value;
     const db = getFirestore(app);
     const docRef = await addDoc(collection(db, "write"), {
@@ -72,7 +69,7 @@ function Writing() {
           spellCheck='false'
           onChange={handleMessageChange}/>
         </div>
-      하이하이
+      {/* 하이하이 */}
       </div>
     </div>
   );
