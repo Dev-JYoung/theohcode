@@ -8,19 +8,36 @@ import { app } from "../../../firebaseConfig/firebase-config";
 
 
 function Writing() {
-  var getValue =''
-  const [message, setMessage] = useState('');
+  var getValue ='';
+  // const [message, setMessage] = useState('');
   const handleMessageChange = event => {
     // 👇️ access textarea value
     getValue = event.target.value;
     console.log(getValue);
   };
+
+  var titleValue = '';
+  const handleTitleChange = event => {
+    // 👇️ access textarea value
+    titleValue = event.target.value;
+    console.log(titleValue);
+  };
+
+  var boardValue = '';
+  const handleBoardChange = event => {
+    // 👇️ access textarea value
+    boardValue = event.target.value;
+    console.log(boardValue);
+  };  
+
   async function putDB(){
     // const ref = useRef(null);
     console.log('abcabc')
     // var txt = ref.current.value;
     const db = getFirestore(app);
     const docRef = await addDoc(collection(db, "write"), {
+      board: boardValue,
+      title: titleValue,
       text: getValue
     });
   }
@@ -39,7 +56,7 @@ function Writing() {
           <div className='headbar'></div>
           <div className='board'>
             <div className='boardtitle'>게시판</div>
-            <select name='게시판 설정' className='boardSetting'>
+            <select name='게시판 설정' className='boardSetting' onClick={handleBoardChange}>
               <option value="게시판선택">게시판선택</option>
               <option value="밴픽게시판">밴픽게시판</option>
               <option value="자유게시판">자유게시판</option>
@@ -47,7 +64,7 @@ function Writing() {
             </div>
           <div className='title'>
             <div className='titleUser'>제목</div>
-            <input className='titleWrite' placeholder="제목을 입력해 주세요"></input>
+            <input className='titleWrite' placeholder="제목을 입력해 주세요" onChange={handleTitleChange}></input>
           </div>
           <div className='attach'></div>
           <textarea name="textbody" id='textbody' className="textbody"
