@@ -1,0 +1,112 @@
+body {
+  font-family: "Pretendard";
+}
+
+.writePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // height: 800px;
+  background-color: rgb(0, 0, 0);
+}
+
+.writePage .colBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10px;
+  background-color: rgb(0, 0, 0);
+}
+
+.writePage .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800px;
+  width: 1320px;
+  background-color: rgb(128, 128, 128);
+}
+
+.writePage .content .window{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 1120px;
+  background-color: rgb(255, 255, 255);
+}
+
+.writePage .content .window .windowHead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  // align-items: center;
+  height: 45px;
+  width: 1120px;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(0, 0, 0);
+}
+
+.writePage .content .window .windowHead .titlehead{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: left;
+  justify-content: center;
+  height: 45px;
+  width: 1120px;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+  background-color: rgb(0, 0, 0);
+}
+
+.writePage .content .window .headbar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1120px;
+  height: 5px;
+  background-color: rgb(255, 115, 34);
+}
+
+.writePage .content .communityHead{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  // height: 200px;
+  width: 1120px;
+  // background-color: rgb(255, 255, 255);
+}
+
+.writePage .content .communityHead .community{
+  display: flex;
+  // flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  font-weight: bold;
+  // justify-content: center;
+  // align-items: center;
+  height: 45px;
+  width: 1120px;
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  // background-color: rgb(0, 0, 0);
+}
+
+.writePage .content .communityHead .write{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100px;
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+
+  background-color: rgb(255, 115, 34);
+  border: none;
+  border-radius: 4px;
+}
