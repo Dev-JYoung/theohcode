@@ -1,5 +1,5 @@
 import React , { useState, useRef }from 'react';
-import "../scss/firing.scss";
+import "../scss/communityBoard.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,7 +7,7 @@ import { getFirestore, collection, addDoc  } from "firebase/firestore";
 import { app } from "../../../firebaseConfig/firebase-config";
 
 
-function Firing() {
+function CommunityBoard() {
 
   return (
     <div className='writePage'>
@@ -15,13 +15,17 @@ function Firing() {
       </div>
       <div className='content'>
         <div className='window1'>
+          <div className='comm'>
+            커뮤니티
+          </div>
           <div className='windowHead'>
             <div className='titlehead'>
-              화제의 글
+              자유게시판
             </div>
-          </div>
-          <div className='headbar'></div>
-          
+            <div className='titlehead'>
+              밴픽게시판
+            </div>            
+          </div>          
         </div>
       </div>
 
@@ -29,4 +33,4 @@ function Firing() {
   );
 }
 
-export default Firing;
+export default CommunityBoard;
