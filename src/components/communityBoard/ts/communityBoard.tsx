@@ -6,22 +6,6 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 import { collection, query, where, getDocs, getFirestore  } from "firebase/firestore";
 import { app } from "../../../firebaseConfig/firebase-config";
 
-
-
-// async function putDB(){
-//   // const ref = useRef(null);
-//   console.log('upload to firebase DB')
-//   // var txt = ref.current.value;
-//   const db = getFirestore(app);
-//   // const q = query(collection(db, "cities"), where("capital", "==", true));
-//   const q = query(collection(db, "write"));
-//   const querySnapshot = await getDocs(q);
-//   querySnapshot.forEach((doc) => {
-//     // doc.data() is never undefined for query doc snapshots
-//     console.log(doc.id, " => ", doc.data());
-//   });
-// }
-
 function pageAlgo(total, bottomSize, listSize, cursor ){
   //total = 총 갯수
   //bottomSize = 하단크기
@@ -46,9 +30,9 @@ function pageAlgo(total, bottomSize, listSize, cursor ){
   }
 }
 
+var numberDB = 0;
 
 function CommunityBoard() {
-  var numberDB = 0;
   const db = getFirestore(app);
   
   const [todos, setTodos] = useState([]);
@@ -62,30 +46,21 @@ function CommunityBoard() {
               setTodos(newData);                
               console.log(todos, newData);
               numberDB = querySnapshot.size;
-              console.log(numberDB)
-              
+              console.log("numberDB" + numberDB)
           })
      
   }
-  console.log('check point 3')
-  console.log(numberDB)
+  console.log("check point 3 numberDB" + numberDB)
   var MyDiv2 = document.getElementById('page');
-  // var doc = document.getElementsByClassName("page");
-  let pagenums = '';
-
+  // // var doc = document.getElementsByClassName("page");
   let info = pageAlgo(numberDB, 20, 10, 1);
-  console.log(numberDB);
-  console.log(info.lastBottomNumber);
-  console.log(info.firstBottomNumber);
   for(let i = info.firstBottomNumber ; i <= info.lastBottomNumber; i++){
-    console.log("check");
-    console.log(i);
     // i === info.cursor ? console.log(`<span>cur : ${i}</span>`) : console.log(`<span>${i}</span>`);
     // MyDiv2 = MyDiv2 + '<h3>hello<h3>';
-    MyDiv2.innerHTML = MyDiv2.innerHTML + {i};
+    console.log("i value" + i);
+    MyDiv2.innerHTML = MyDiv2.innerHTML + i;
     // pagenums.concat('<span>${i}</span>')
   }
-  console.log(pagenums)
   useEffect(()=>{
       fetchPost();
   }, []);
@@ -133,9 +108,7 @@ function CommunityBoard() {
 
           </div>   
         </div>
-        <div className='page' id='page'>
-            {pagenums}
-        </div>
+        <div className='page' id='page'></div>
       </div>
 
     </div>
