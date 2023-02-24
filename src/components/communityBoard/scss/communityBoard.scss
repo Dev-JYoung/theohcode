@@ -92,7 +92,7 @@ body {
 
 .writePage .content1 .todo-content .table{
   display: flex;
-  // flex-direction: row;
+  flex-direction: column;
   // align-items: center;
   // justify-content: center;
   // align-items: center;
@@ -105,13 +105,61 @@ body {
 
 .writePage .content1 .todo-content .table .tableTitle{
   display: flex;
-  // flex-direction: row;
-  // align-items: center;
-  // justify-content: center;
-  // align-items: center;
-  // height: 745px;
+  width: 1120px;
+  color:rgb(255, 0, 0);
+  padding-top: 10px;
+  padding-left: 50px;
+  font-size: 20px;
+  // background-color: rgb(255, 255, 255);
+}
+
+.writePage .content1 .todo-content .table .tableTitle .table-rec{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableTitle .table-cnt{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableTitle .table-aut{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableTitle .table-tit{
+  display: flex;
+  width: 150px;
+}
+
+
+.writePage .content1 .todo-content .table .tableData{
+  display: flex;
   width: 1120px;
   color:rgb(0, 0, 0);
+  padding-top: 10px;
+  padding-left: 50px;
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
+  // background-color: rgb(255, 255, 255);
+}
+
+.writePage .content1 .todo-content .table .tableData .table-rec{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableData .table-cnt{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableData .table-aut{
+  display: flex;
+  width: 150px;
+}
+.writePage .content1 .todo-content .table .tableData .table-tit{
+  display: flex;
+  width: 150px;
+}
+
+.writePage .content1 .page{
+  display: flex;
+  height: 100px;
+  width: 1150px;
 }
