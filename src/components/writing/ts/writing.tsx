@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import { getFirestore, collection, addDoc  } from "firebase/firestore";
-import { app } from "../../../firebaseConfig/firebase-config";
+import { app, auth, onAuthStateChanged  } from "../../../firebaseConfig/firebase-config";
 
+var uid = '';
 
 function Writing() {
   var getValue ='';
@@ -26,16 +27,32 @@ function Writing() {
     boardValue = event.target.value;
     // console.log(boardValue);
   };  
+  
+  onAuthStateChanged(auth,(user)=>{
+    if(user){
+      uid = user.displayName;
+    } else{
+      uid = 'oo';
+    }
+  })
 
   async function putDB(){
+    const currentDate = new Date();
+    const currentDayOfMonth = currentDate.getDate();
+    const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+    const currentYear = currentDate.getFullYear();
     // const ref = useRef(null);
     console.log('upload to firebase DB')
     // var txt = ref.current.value;
     const db = getFirestore(app);
     const docRef = await addDoc(collection(db, "write"), {
+      recommend:0,
+      view:0,
+      author:uid, //TODO: need to change later
       board: boardValue,
       title: titleValue,
-      text: getValue
+      text: getValue,
+      time: currentYear+ "-" + (currentMonth + 1) + "-" + currentDayOfMonth,
     });
   }
   return (

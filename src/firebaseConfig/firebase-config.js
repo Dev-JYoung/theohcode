@@ -6,7 +6,7 @@ import {
   collection,
   where,
   addDoc,} from '@firebase/firestore';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged  } from "firebase/auth";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 
 
@@ -60,4 +60,5 @@ export {
   storageRef,
   signInWithGoogle,
   logout,
+  onAuthStateChanged,
 };
