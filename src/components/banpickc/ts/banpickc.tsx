@@ -9,6 +9,7 @@ import domtoimage from "dom-to-image";
 import CopyToClipboard from 'react-copy-to-clipboard';
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
+import { Link } from "react-router-dom";
 
 var URLstorage = '';
 function popup(){
@@ -318,9 +319,11 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
       </div>
       <div className="bar"></div>
-      <div className="share" onClick={popup}>
-        <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
-      </div>
+      <Link className="share" to="/write" onClick={popup}>
+      글쓰기</Link>
+        
+        {/* <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/> */}
+      {/* </div> */}
       <div className="bar"></div>
     </div>
     <div className="sharepopup" id='sharepopup'>
