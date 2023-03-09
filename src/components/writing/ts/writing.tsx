@@ -54,6 +54,7 @@ function Writing() {
       text: getValue,
       time: currentYear+ "-" + (currentMonth + 1) + "-" + currentDayOfMonth,
     });
+    window.location.pathname = '/boardfree'
   }
   return (
     <div className='writePage'>

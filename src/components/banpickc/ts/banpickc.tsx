@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState} from "react";
 import '../scss/banpickc.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareNodes, faPlay, faRotateLeft, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faShareNodes, faPlay, faRotateLeft, faMagnifyingGlass, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { storageRef } from "../../../firebaseConfig/firebase-config";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -12,18 +12,18 @@ import * as htmlToImage from 'html-to-image';
 import { Link } from "react-router-dom";
 
 var URLstorage = '';
-function popup(){
-console.log(URLstorage);
-const el = document.getElementById("sharepopup");
-if (el != null ) {
-    if (el.style.display === 'none') {
-      el.style.display = 'block';
-      el.style.display = 'flex';
-    } else {
-      el.style.display = 'none';
-    }
-  }
-}
+// function popup(){
+// console.log(URLstorage);
+// const el = document.getElementById("sharepopup");
+// if (el != null ) {
+//     if (el.style.display === 'none') {
+//       el.style.display = 'block';
+//       el.style.display = 'flex';
+//     } else {
+//       el.style.display = 'none';
+//     }
+//   }
+// }
 
 
 // HAN 20230122 to order for square box
@@ -303,6 +303,83 @@ function Banpickc() {
     // link.href = dataUrl;
     // link.click();
   }
+  const facebook = async () => {
+    console.log('started banpickc')
+    var dataBlob = await htmlToImage.toBlob(domEl.current as any);
+
+    const uploadTask = uploadBytesResumable(storageRef, dataBlob);
+    uploadTask.on('state_changed', 
+  (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+    // Handle unsuccessful uploads
+    console.log(error);
+  }, 
+  () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      URLstorage = downloadURL;
+      console.log('File available at', downloadURL);
+      window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
+      // window.open("https://twitter.com/intent/tweet?text=My guess&url=" + downloadURL);
+      console.log('downloaded')
+    });
+    }
+  );
+  const dataUrl = await htmlToImage.toPng(domEl.current as any);
+  }
+
+  const instagram = async () => {
+    console.log('started banpickc')
+    var dataBlob = await htmlToImage.toBlob(domEl.current as any);
+
+    const uploadTask = uploadBytesResumable(storageRef, dataBlob);
+    uploadTask.on('state_changed', 
+  (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+    // Handle unsuccessful uploads
+    console.log(error);
+  }, 
+  () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      URLstorage = downloadURL;
+      console.log('File available at', downloadURL);
+      // window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
+      window.open("https://twitter.com/intent/tweet?text=My guess&url=" + downloadURL);
+      console.log('downloaded')
+    });
+    }
+  );
+  const dataUrl = await htmlToImage.toPng(domEl.current as any);
+  }
 
   return(
   <div className='banpickMain'>  
@@ -315,12 +392,22 @@ function Banpickc() {
         <span className="prefselect">Preference Select</span>
       </div>          
       <div className="bar"></div>
-      <div className="share" onClick={downloadImage}>
+      {/* <div className="share" onClick={downloadImage}>
         <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/>
-      </div>
+      </div> */}
+      <div className="share" onClick={facebook}>
+        <FontAwesomeIcon className="fa-brands fa-facebook" size="2x" icon={faFacebook}/>
+      </div>      
       <div className="bar"></div>
-      <Link className="share" to="/write" onClick={popup}>
-      글쓰기</Link>
+      <div className="share" onClick={instagram}>
+        <FontAwesomeIcon className="fa-brands fa-instagram" size="2x" icon={faInstagram}/>
+      </div>      
+      <div className="bar"></div>
+      <Link className="share" to="/write" > 
+      {/* onClick={popup}> */}
+      <FontAwesomeIcon className='i' icon={faPenToSquare} />
+      Write
+      </Link>
         
         {/* <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/> */}
       {/* </div> */}
