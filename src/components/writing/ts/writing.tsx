@@ -2,13 +2,17 @@ import React , { useState, useRef }from 'react';
 import "../scss/writing.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-
+import { useLocation } from "react-router-dom";
 import { getFirestore, collection, addDoc  } from "firebase/firestore";
 import { app, auth, onAuthStateChanged  } from "../../../firebaseConfig/firebase-config";
 
 var uid = '';
-
+let value = sessionStorage.getItem("dataUrl");
 function Writing() {
+  // console.log(dataUrl);
+  // const location = useLocation();
+  // const value = location.state.dataUrl;
+  console.log('check: '+value)
   var getValue ='';
   // const [message, setMessage] = useState('');
   const handleMessageChange = event => {
@@ -63,6 +67,7 @@ function Writing() {
       <div className='content'>
         <div className='window'>
           <div className='windowHead'>
+          {/* <h1> {value ? value.dataUrl : "Go to Home"} </h1> */}
             <div className='titlehead'>
               글쓰기
             </div>

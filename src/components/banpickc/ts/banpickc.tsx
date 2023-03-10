@@ -9,8 +9,7 @@ import domtoimage from "dom-to-image";
 import CopyToClipboard from 'react-copy-to-clipboard';
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
-import { Link } from "react-router-dom";
-
+import { Link} from "react-router-dom";
 var URLstorage = '';
 // function popup(){
 // console.log(URLstorage);
@@ -25,7 +24,7 @@ var URLstorage = '';
 //   }
 // }
 
-
+var dataUrl = '';
 // HAN 20230122 to order for square box
 var order = ['blueban1', 'blueban2', 'blueban3', 'blueban4', 'blueban5', 
             'redban1', 'redban2', 'redban3', 'redban4', 'redban5',
@@ -340,8 +339,9 @@ function Banpickc() {
     }
   );
   const dataUrl = await htmlToImage.toPng(domEl.current as any);
+  // console.log('infunction'+dataUrl);
   }
-
+  // console.log('outfunction'+dataUrl);
   const instagram = async () => {
     console.log('started banpickc')
     var dataBlob = await htmlToImage.toBlob(domEl.current as any);
@@ -381,6 +381,47 @@ function Banpickc() {
   const dataUrl = await htmlToImage.toPng(domEl.current as any);
   }
 
+  const writewithphoto = async () => {
+    console.log('started banpickc')
+    var dataBlob = await htmlToImage.toBlob(domEl.current as any);
+
+    const uploadTask = uploadBytesResumable(storageRef, dataBlob);
+    uploadTask.on('state_changed', 
+  (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+    // Handle unsuccessful uploads
+    console.log(error);
+  }, 
+  () => {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      URLstorage = downloadURL;
+      // console.log('File available at', downloadURL);
+      // // window.open("http://www.facebook.com/sharer/sharer.php?u=" + downloadURL);
+      // window.open("https://twitter.com/intent/tweet?text=My guess&url=" + downloadURL);
+      // console.log('downloaded')
+    });
+    }
+  );
+  const dataUrl = await htmlToImage.toPng(domEl.current as any);
+  sessionStorage.setItem("dataUrl", dataUrl);
+  window.location.href = "write";
+  }
+
   return(
   <div className='banpickMain'>  
     <div className="banpickselect">
@@ -403,11 +444,15 @@ function Banpickc() {
         <FontAwesomeIcon className="fa-brands fa-instagram" size="2x" icon={faInstagram}/>
       </div>      
       <div className="bar"></div>
-      <Link className="share" to="/write" > 
+      <div className="share" onClick={writewithphoto}>
+        <FontAwesomeIcon className='i' icon={faPenToSquare} />Write
+      </div>  
+      {/* <Link className="share" to="/write" state={{ value: dataUrl }}> 
+      </Link> */}
       {/* onClick={popup}> */}
-      <FontAwesomeIcon className='i' icon={faPenToSquare} />
+      {/* <FontAwesomeIcon className='i' icon={faPenToSquare} />
       Write
-      </Link>
+       */}
         
         {/* <FontAwesomeIcon className="fa-sharp fa-solid fa-share-nodes" icon={faShareNodes}/> */}
       {/* </div> */}
