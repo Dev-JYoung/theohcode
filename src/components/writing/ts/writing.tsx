@@ -13,6 +13,19 @@ function Writing() {
   // const location = useLocation();
   // const value = location.state.dataUrl;
   console.log('check: '+value)
+
+  const img = document.createElement('img');
+  
+  if (value!==null){
+    console.log('not null img')
+    img.src = value;
+    document.body.appendChild(img);
+    img.className = 'imageinsert';
+    img.width = 350;
+    img.height = 300;
+  } else {
+    console.log('null img')
+  }  
   var getValue ='';
   // const [message, setMessage] = useState('');
   const handleMessageChange = event => {
@@ -87,6 +100,7 @@ function Writing() {
             <input className='titleWrite' placeholder="제목을 입력해 주세요" onChange={handleTitleChange}></input>
           </div>
           <div className='attach'></div>
+          <div className='imageinsert' id='imageinsert'></div>
           <textarea name="textbody" id='textbody' className="textbody"
           // value={message}
           spellCheck='false'
