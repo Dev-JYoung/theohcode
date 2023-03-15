@@ -13,7 +13,7 @@ function Firing() {
     <div className='writePage'>
       <div className='colBar'>
       </div>
-      <div className='content'>
+      <div className='content1'>
         <div className='window1'>
           <div className='windowHead'>
             <div className='titlehead'>

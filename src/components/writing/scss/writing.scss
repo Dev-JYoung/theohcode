@@ -136,8 +136,16 @@ body {
   width: 920px;
   height: 25px;
 }
+.writePage .content .window .imageinsert{
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: left;
+  background-color: white;
+  border-style: solid;
+}
 
-.writePage .content .window .textbody{
+.writePage .content .window .texts .textbody{
   vertical-align: top;
   margin-top: 15px;
   // display:flex;

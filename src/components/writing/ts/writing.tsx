@@ -14,15 +14,21 @@ function Writing() {
   // const value = location.state.dataUrl;
   console.log('check: '+value)
 
-  const img = document.createElement('img');
-  
-  if (value!==null){
-    console.log('not null img')
+  var elem = document.getElementById('imageinsert');
+  if (value!==null && elem){
+    var img = document.createElement('img');
     img.src = value;
-    document.body.appendChild(img);
     img.className = 'imageinsert';
-    img.width = 350;
-    img.height = 300;
+    img.width = 200;
+    img.height = 150;
+    console.log('not null img')
+    
+    document.getElementById('imageinsert').appendChild(img);
+    // document.body.appendChild(img);
+    // img.id = 'imageinsert';
+    // img.className = 'imageinsert';
+    // img.width = 350;
+    // img.height = 300;
   } else {
     console.log('null img')
   }  
@@ -101,11 +107,14 @@ function Writing() {
           </div>
           <div className='attach'></div>
           <div className='imageinsert' id='imageinsert'></div>
-          <textarea name="textbody" id='textbody' className="textbody"
-          // value={message}
-          spellCheck='false'
-          onChange={handleMessageChange}/>
-        </div>
+          <div className='texts'>
+            <textarea name="textbody" id='textbody' className="textbody"
+            // value={message}
+            spellCheck='false'
+            onChange={handleMessageChange}/>
+          </div>
+          </div>
+
       {/* 하이하이 */}
       </div>
     </div>
